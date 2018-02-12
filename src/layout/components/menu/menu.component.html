@@ -1,1 +1,28 @@
-<small>menu</small>
+<ng-sidebar-container allowSidebarBackdropControl="true">
+    <!-- A sidebar -->
+    <ng-sidebar [(opened)]="_opened" showBackdrop="true" closeOnClickOutside="true" keyClose="true" mode="over">
+        <div class="asd">
+            <p>Sidebar coaaaaaaaaaaaaaaaaaantents</p>
+            <a closeSidebar>Closes the sidebar</a>
+        </div>
+    </ng-sidebar>
+
+    <div ng-sidebar-content>
+        <!-- OVDE DODAJES ROOUTER OUTLET STA VEC -->
+        <div class="navigation">
+            <div class="open-close-button">
+                <button (click)="_toggleSidebar()" class="sidebar-button">
+                    <i class="fa fa-align-justify"></i>
+                </button>
+            </div>
+            <div bp="grid vertical-center">
+                <div bp="4 offset-5">
+                    <div class="nav-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2000px-International_Pok%C3%A9mon_logo.svg.png"
+                            alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-sidebar-container>

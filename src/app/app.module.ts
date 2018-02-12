@@ -1,6 +1,7 @@
 // Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { SidebarModule } from 'ng-sidebar';
 
 // Components
 import { MenuComponent } from '../layout/components/menu/menu.component';
@@ -10,7 +11,8 @@ import { MenuComponent } from '../layout/components/menu/menu.component';
     MenuComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    SidebarModule.forRoot()
   ],
   providers: [],
   bootstrap: [MenuComponent]

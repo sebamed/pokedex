@@ -1,0 +1,58 @@
+.navigation {
+    background: #2980b9;
+    padding: 0 0;
+    width: 100%;
+    text-align: center;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2);
+}
+
+.nav-logo {
+    margin: 0;
+}
+
+.nav-logo img {
+    margin-top: 30px;
+    max-width: 50%;
+    height: auto;
+}
+
+@media only screen and (max-width: 1490px) {
+    .nav-logo img {
+        margin-top: 30px;
+        max-width: 80%;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .nav-logo img {
+        margin-top: 30px;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.open-close-button {
+    float: left;
+    margin-left: 15px;
+}
+
+.sidebar-button {
+    background: transparent;
+    padding: 15px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+/* sidebar style */
+
+ng-sidebar-container {
+    height: 100vh;
+}
+
+.asd {
+    background: #fff;
+}

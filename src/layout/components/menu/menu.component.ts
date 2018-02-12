@@ -8,12 +8,18 @@ import { OnInit, OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 })
 export class MenuComponent implements OnInit, OnDestroy {
 
+    private _opened: boolean = false;
+
     ngOnInit() {
 
     }
 
     ngOnDestroy() {
 
+    }
+
+    _toggleSidebar() {
+        this._opened = !this._opened;
     }
 
 }
