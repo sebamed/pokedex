@@ -9,10 +9,12 @@ import { Routing } from './app.routing';
 
 // Components
 import { MenuComponent } from '../layout/components/menu/menu.component';
+import { PokemonListComponent } from '../layout/components/pokemon-list/pokemon-list.component';
 
 @NgModule({
   declarations: [
-    MenuComponent
+    MenuComponent,
+    PokemonListComponent
   ],
   imports: [
     BrowserModule,

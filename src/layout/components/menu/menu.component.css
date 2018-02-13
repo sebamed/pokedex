@@ -1,6 +1,5 @@
 .navigation {
-    background: transparent;
-    /* promeni */
+    background: #fff;
     padding: 0 0;
     width: 100%;
     text-align: center;
@@ -94,6 +93,10 @@ ul {
 .close-btn a i:hover {
     color: #147291;
     transform: rotate(270deg);
+}
+
+.separator {
+    padding: 65px 0;
 }
 
 /* sidebar style */

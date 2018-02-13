@@ -1,0 +1,21 @@
+#pokemon-list {
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid #008cba;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.text h4 {
+    float: left;
+}
+
+.text p {
+    float: right;
+}
+
+.card img {
+    margin: 10px;
+}
