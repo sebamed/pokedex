@@ -1,10 +1,20 @@
 <ng-sidebar-container allowSidebarBackdropControl="true">
     <!-- A sidebar -->
     <ng-sidebar [(opened)]="_opened" showBackdrop="true" closeOnClickOutside="true" keyClose="true" mode="over">
-        <div class="asd">
-            <p>Sidebar coaaaaaaaaaaaaaaaaaantents</p>
-            <a closeSidebar>Closes the sidebar</a>
-        </div>
+        <aside>
+            <div class="close-btn">
+                <a closeSidebar>
+                    <i class="fa fa-close"></i>
+                </a>
+            </div>
+            <div class="nav">
+                <ul class="nav-list">
+                    <li class="active">asd</li>
+                    <li>dsa</li>
+                    <li>dsa</li>
+                </ul>
+            </div>
+        </aside>
     </ng-sidebar>
 
     <div ng-sidebar-content>
@@ -24,5 +34,11 @@
                 </div>
             </div>
         </div>
+
+        <router-outlet></router-outlet>
+        <!--
+        <div bp="grid 6 4@md 2@lg">   
+        </div>
+    -->
     </div>
 </ng-sidebar-container>

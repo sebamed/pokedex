@@ -1,12 +1,43 @@
 .navigation {
-    background: #2980b9;
+    background: transparent;
+    /* promeni */
     padding: 0 0;
     width: 100%;
     text-align: center;
     height: 90px;
     line-height: 90px;
     text-align: center;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2);
+    position: fixed;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2);
+}
+
+ul {
+    -webkit-padding-start: 0 !important;
+}
+
+.nav {
+    padding: 10px 0 10px 0;
+}
+
+.nav-list {
+    list-style-type: none;
+}
+
+.nav-list li {
+    cursor: pointer;
+    padding: 15px;
+    transition: all .3s ease-in-out;
+}
+
+.nav-list li:hover {
+    border-right: 5px solid #000;
+    background: #147291;
+    color: #fff;
+}
+
+.active {
+    border-right: 5px solid #008cba;
+    color: #cccdce;
 }
 
 .nav-logo {
@@ -45,6 +76,24 @@
     padding: 15px;
     border: 1px solid #fff;
     border-radius: 5px;
+    outline: none;
+}
+
+.close-btn {
+    padding: 25px 0 0 0;
+    text-align: center;
+}
+
+.close-btn a i {
+    font-size: 1.2rem;
+    color: #008cba;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.close-btn a i:hover {
+    color: #147291;
+    transform: rotate(270deg);
 }
 
 /* sidebar style */
@@ -53,6 +102,9 @@ ng-sidebar-container {
     height: 100vh;
 }
 
-.asd {
+aside {
     background: #fff;
+    width: 260px;
+    box-shadow: 0 0 2.5em rgba(85, 85, 85, .5);
+    height: 100%;
 }
