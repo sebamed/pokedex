@@ -18,6 +18,15 @@ export class MenuComponent implements OnInit, OnDestroy {
 
     }
 
+    setActive(event) {
+        for(let i = 0; i < document.getElementById("nav-list").children.length; i++){
+            document.getElementById("nav-list").children[i].classList.remove("active");
+        }
+        let target = event.target || event.srcElement;
+        target.classList.add("active");
+        this._toggleSidebar();
+    }
+
     _toggleSidebar() {
         this._opened = !this._opened;
     }

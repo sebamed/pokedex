@@ -18,24 +18,27 @@ ul {
     padding: 10px 0 10px 0;
 }
 
-.nav-list {
+#nav-list {
     list-style-type: none;
 }
 
-.nav-list li {
+#nav-list li {
     cursor: pointer;
     padding: 15px;
-    transition: all .3s ease-in-out;
 }
 
-.nav-list li:hover {
-    border-right: 5px solid #000;
-    background: #147291;
-    color: #fff;
+#nav-list li:hover {
+    background-image: url('https://image.flaticon.com/icons/svg/528/528101.svg');
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+    background-size: 30px;
 }
 
 .active {
-    border-right: 5px solid #008cba;
+    background-image: url('https://image.flaticon.com/icons/svg/528/528101.svg');
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+    background-size: 30px;
     color: #cccdce;
 }
 
@@ -108,6 +111,6 @@ ng-sidebar-container {
 aside {
     background: #fff;
     width: 260px;
-    box-shadow: 0 0 2.5em rgba(85, 85, 85, .5);
+
     height: 100%;
 }
