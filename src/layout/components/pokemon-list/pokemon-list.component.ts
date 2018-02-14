@@ -10,7 +10,6 @@ declare var $: any;
 export class PokemonListComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
-        
     }
 
     ngOnDestroy() {

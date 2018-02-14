@@ -20,3 +20,25 @@
     margin: 10px;
 }
 
+.go-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background: #FFCB05;
+    border: 1px solid #e6ac00;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.go-top i {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.separator {
+    padding: 65px 0;
+}

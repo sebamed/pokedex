@@ -13,18 +13,10 @@ export class MenuComponent implements OnInit, OnDestroy {
     private _opened: boolean = false;
 
     ngOnInit() {
-        // $('.go-top').hide();
-        this.scrollListening();
     }
 
     ngOnDestroy() {
 
-    }
-
-    scrollListening() {
-        window.addEventListener('scroll', function () {
-            console.log("skrolujem " + $('#pokemon-list').scrollTop());
-        }, true);
     }
 
     setActive(event) {
@@ -38,8 +30,5 @@ export class MenuComponent implements OnInit, OnDestroy {
 
     _toggleSidebar() {
         this._opened = !this._opened;
-    }
-
-    scrollTop() {
     }
 }
