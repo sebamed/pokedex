@@ -6,6 +6,9 @@
         #ffcb05,
         #e6ac00,
         #cca204
+
+    red:
+        #e85350
 */
 
 .navigation {
@@ -100,13 +103,22 @@ ul {
 }
 
 .close-btn {
-    padding: 25px 0 0 0;
-    text-align: center;
+    padding: 25px 35px 0 30px;
+    text-align: right;
+}
+
+.close-btn span {
+    color: #fff;
+    letter-spacing: 1px;
+    line-height: normal;
+    font-size: 1.6em;
+    font-family: Righteous;
 }
 
 .close-btn a i {
-    font-size: 1.2rem;
-    color: #ffcb05;
+    font-size: 1rem;
+    line-height: 1.9rem;
+    color: #fff;
     cursor: pointer;
     transition: all .3s ease-in-out;
 }
