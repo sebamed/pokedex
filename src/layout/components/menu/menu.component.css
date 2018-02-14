@@ -118,7 +118,7 @@ ul {
 .close-btn a i {
     font-size: 1rem;
     line-height: 1.9rem;
-    color: #fff;
+    color: #FFCB05;
     cursor: pointer;
     transition: all .3s ease-in-out;
 }
@@ -136,6 +136,12 @@ ul {
     padding: 65px 0;
 }
 
+.sidebar-separator {
+    background-color: #264573;
+    padding: 4.5px 0;
+    margin: 10px 0;
+}
+
 /* sidebar style */
 
 ng-sidebar-container {
@@ -143,6 +149,11 @@ ng-sidebar-container {
 }
 
 aside {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-right: 10px solid #264573;
+    border-bottom: 10px solid #264573;
     background: #335c99;
     width: 290px;
     height: 100%;
