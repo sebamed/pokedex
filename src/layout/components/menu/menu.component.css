@@ -13,12 +13,6 @@
 
 .navigation {
     background: #FFCB05;
-    /*
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2000px-International_Pok%C3%A9mon_logo.svg.png');
-    background-repeat: no-repeat;
-    background-size: 8%;
-    background-position: center center;
-    */
     border-bottom: 10px solid #e6ac00;
     padding: 0 0;
     width: 100%;
@@ -120,6 +114,9 @@ ul {
     line-height: 1.9rem;
     color: #FFCB05;
     cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
 
@@ -140,6 +137,25 @@ ul {
     background-color: #264573;
     padding: 4.5px 0;
     margin: 10px 0;
+}
+
+.go-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background: #FFCB05;
+    border: 1px solid #e6ac00;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.go-top i {
+    font-size: 1.5rem;
+    color: #fff;
 }
 
 /* sidebar style */

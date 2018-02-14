@@ -1,5 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
+declare var $: any;
+
 @Component({
     selector: 'app-poke-list',
     templateUrl: './pokemon-list.component.html',
@@ -7,12 +9,11 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class PokemonListComponent implements OnInit, OnDestroy {
 
-    ngOnInit(){
-
+    ngOnInit() {
         
     }
 
-    ngOnDestroy(){
+    ngOnDestroy() {
 
     }
 }

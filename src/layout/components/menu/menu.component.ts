@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { OnInit, OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 
+declare var $: any;
+
 @Component({
     selector: 'app-menu',
     templateUrl: './menu.component.html',
@@ -11,15 +13,22 @@ export class MenuComponent implements OnInit, OnDestroy {
     private _opened: boolean = false;
 
     ngOnInit() {
-
+        // $('.go-top').hide();
+        this.scrollListening();
     }
 
     ngOnDestroy() {
 
     }
 
+    scrollListening() {
+        window.addEventListener('scroll', function () {
+            console.log("skrolujem " + $('#pokemon-list').scrollTop());
+        }, true);
+    }
+
     setActive(event) {
-        for(let i = 0; i < document.getElementById("nav-list").children.length; i++){
+        for (let i = 0; i < document.getElementById("nav-list").children.length; i++) {
             document.getElementById("nav-list").children[i].classList.remove("active");
         }
         let target = event.target || event.srcElement;
@@ -31,4 +40,6 @@ export class MenuComponent implements OnInit, OnDestroy {
         this._opened = !this._opened;
     }
 
+    scrollTop() {
+    }
 }
