@@ -1,25 +1,68 @@
 #pokemon-list {
-    padding: 20px;
+    padding: 35px;
 }
 
 .card {
-    background: url('../../../assets/svg/kartica1.svg');
-    background-size: 213px 113px;
-    margin: 10px 10px;
+    /*background: url('../../../assets/svg/kartica1.svg');
     background-repeat: no-repeat;
-    border: 1px solid #008cba;
-    border-radius: 5px;
+    */
+    padding: 25px 30px;
+    position: relative;
+    cursor: pointer;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.card:hover {
+    -webkit-box-shadow: -3px -4px 3px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    -3px -4px 3px 0px rgba(50, 50, 50, 0.5);
+    box-shadow:         -3px -4px 3px 0px rgba(50, 50, 50, 0.5);
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    background-color: #335C99;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 70%;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    background-image: url('../../../assets/svg/corner.svg');
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: 9%;
+    background-color: #4C6FB2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.text {
+    position: relative;
+    z-index: 1;
 }
 
 .text h4 {
     float: left;
+    color: #fff;
 }
 
 .text p {
     float: right;
+    color: #fff;
 }
 
 .card img {
+    position: relative;
+    z-index: 1;
     margin: 10px;
 }
 
