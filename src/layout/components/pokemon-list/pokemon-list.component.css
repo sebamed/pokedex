@@ -3,9 +3,12 @@
 }
 
 .card {
+    background: url('../../../assets/svg/kartica1.svg');
+    background-size: 213px 113px;
+    margin: 10px 10px;
+    background-repeat: no-repeat;
     border: 1px solid #008cba;
     border-radius: 5px;
-    padding: 20px;
 }
 
 .text h4 {

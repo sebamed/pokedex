@@ -1,0 +1,17 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230.21 131.6">
+	<defs>
+		<style>
+			.cls-1,.cls-4{fill:#264573;}.cls-2{fill:#335c99;}.cls-3{fill:#fff;}.cls-4{stroke:#264573;stroke-linecap:round;stroke-miterlimit:10;}
+		</style>
+	</defs>
+	<title>
+		kartica1
+	</title>
+	<rect class="cls-1" x="0.5" y="0.5" width="140" height="113" />
+	<path class="cls-1" d="M302,85V197H163V85H302m1-1H162V198H303V84Z" transform="translate(-162 -84)" />
+	<rect class="cls-2" x="141.5" y="0.5" width="73" height="113" />
+	<path class="cls-2" d="M376,85V197H304V85h72m1-1H303V198h74V84Z" transform="translate(-162 -84)" />
+	<rect class="cls-3" x="354.14" y="186.86" width="35.37" height="18.95" transform="translate(-201.95 197.43) rotate(-39.51)" />
+	<path class="cls-3" d="M379.38,178.48l11.42,13.85-26.52,21.86-11.42-13.85,26.52-21.86m.13-1.41-28.06,23.14,12.69,15.39,28.07-23.14-12.7-15.39Z" transform="translate(-162 -84)" />
+	<polygon class="cls-4" points="194.02 92.78 192.85 113.21 214.29 95.53 194.02 92.78" />
+</svg>
