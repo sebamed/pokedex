@@ -6,7 +6,7 @@
     /*background: url('../../../assets/svg/kartica1.svg');
     background-repeat: no-repeat;
     */
-    padding: 25px 30px;
+    padding: 20px 30px;
     position: relative;
     cursor: pointer;
     -webkit-transition: all .3s ease-in-out;
@@ -17,18 +17,19 @@
 
 .card:hover {
     -webkit-box-shadow: -3px -4px 3px 0px rgba(50, 50, 50, 0.5);
-    -moz-box-shadow:    -3px -4px 3px 0px rgba(50, 50, 50, 0.5);
-    box-shadow:         -3px -4px 3px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: -3px -4px 3px 0px rgba(50, 50, 50, 0.5);
+    box-shadow: -3px -4px 3px 0px rgba(50, 50, 50, 0.5);
 }
 
 .card::after {
     content: '';
     position: absolute;
-    background-color: #335C99;
+    background-color: #213861;
+    border-top-left-radius: 5px;
     top: 0;
     bottom: 0;
     left: 0;
-    width: 70%;
+    width: 65%;
 }
 
 .card::before {
@@ -38,32 +39,30 @@
     background-repeat: no-repeat;
     background-position: 100% 100%;
     background-size: 9%;
-    background-color: #4C6FB2;
+    background-color: #2B4B86;
     top: 0;
     bottom: 0;
     left: 0;
     width: 100%;
 }
 
-.text {
+.pokemon {
     position: relative;
     z-index: 1;
 }
 
-.text h4 {
+.pokemon-info {
     float: left;
-    color: #fff;
+    width: 60%;
 }
 
-.text p {
+.pokemon-image {
     float: right;
-    color: #fff;
+    padding: 10px 0;
 }
 
-.card img {
-    position: relative;
-    z-index: 1;
-    margin: 10px;
+.pokemon-image img {
+    
 }
 
 .go-top {
