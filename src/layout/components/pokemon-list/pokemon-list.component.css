@@ -6,6 +6,28 @@
     border: 1px solid #008cba;
 }
 
+.card:hover .diamond {
+    -ms-transform: rotate(45deg) translate(0px, 0px);
+    -webkit-transform: rotate(45deg) translate(0px, 0px);
+    -o-transform: rotate(45deg) translate(0px, 0px);
+    transform: rotate(45deg) translate(0px, 0px);
+    background-color: #fff;
+}
+
+.card:hover .diamond::after {
+    -ms-transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+}
+
+.card:hover .diamond p {
+    -ms-transform: rotate(-45deg) translate(0px, 0px);
+    -webkit-transform: rotate(-45deg) translate(0px, 0px);
+    -o-transform: rotate(-45deg) translate(0px, 0px);
+    transform: rotate(-45deg) translate(0px, 0px);
+}
+
 .card-header {
     margin: 0 10px;
     border: 1px solid #000;
@@ -73,7 +95,6 @@
 .diamond::after {
     content: '';
     background: #FFCB05;
-    border: 1px solid #fff;
     position: absolute;
     left: 0;
     top: 0;
@@ -93,19 +114,6 @@
     margin: 10px 10px;
     border: 1px solid #008cba;
     padding: 10px;
-}
-
-.diamond:hover::after {
-    transform: translate(0px, 0px);
-}
-
-.diamond:hover {
-    transform: rotate(45deg) translate(0px, 0px);
-    background-color: #fff;
-}
-
-.diamond:hover p {
-    transform: rotate(-45deg) translate(0px, 0px);
 }
 
 .diamond p {
