@@ -1,10 +1,12 @@
 #pokemon-list {
     padding: 35px;
+    background-color: #e6e7e8;
 }
 
 .card {
-    border: 1px solid #008cba;
 }
+
+/* card hovers */
 
 .card:hover .diamond {
     -ms-transform: rotate(45deg) translate(0px, 0px);
@@ -29,8 +31,8 @@
 }
 
 .card-header {
+    padding: 15px;
     margin: 0 10px;
-    border: 1px solid #000;
     background-color: #f6f6f6;
     position: relative;
     text-align: center;
@@ -51,11 +53,40 @@
     z-index: 100;
 }
 
+.card-header h4 {
+    color: #e6ac00;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    letter-spacing: 1.2px;
+
+}
+
+.card-img img {
+    width: 190px;
+}
+
 .card-footer {
     margin: 0;
     background-color: #335c9b;
-    border: 1px solid #FFCB05;
+    border: 1px solid transparent;
     text-align: center;
+}
+
+.card-top-bg {
+    background-image: url('/assets/svg/corner-card-left.svg');
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.card-top-bg::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/svg/corner-card-right.svg');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 20%;
 }
 
 .card-img {
@@ -112,7 +143,6 @@
 
 .card-icons {
     margin: 10px 10px;
-    border: 1px solid #008cba;
     padding: 10px;
 }
 
