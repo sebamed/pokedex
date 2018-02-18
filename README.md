@@ -1,3 +1,10 @@
+# Greetings
+- [Pokemon API](https://pokeapi.co/) - Free pokemon REST API
+
+# Demo
+Demo will be uploaded soon!
+
+
 # Pokedex
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
