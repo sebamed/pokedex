@@ -64,7 +64,7 @@ ul {
 
 #nav-list li:hover {
     background-color: #4c6fb2;
-    background-image: url('https://image.flaticon.com/icons/svg/528/528101.svg');
+    background-image: url('/assets/svg/pokeball.svg');
     background-repeat: no-repeat;
     background-position: 90% 50%;
     background-size: 30px;
@@ -73,7 +73,7 @@ ul {
 
 .active {
     background-color: #4c6fb2;
-    background-image: url('https://image.flaticon.com/icons/svg/528/528101.svg');
+    background-image: url('/assets/svg/open-pokeball.svg');
     background-repeat: no-repeat;
     background-position: 90% 50%;
     background-size: 30px;
