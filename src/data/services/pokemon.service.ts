@@ -12,9 +12,10 @@ export class PokemonService {
 
     }
 
-    getPokemon(){
+    getPokemons() {
         // return this._http.get('https://pokeapi.co/api/v2/pokemon/1/')
         // .map(res => res.json());
-        return this._http.get('data/api/pokemon.json').map(res => res.json());
+        // Returns an array of pokemons (IPokemon interface)
+        return this._http.get('data/api/pokemon.json').map(res => <IPokemon[]>res.json());
     }
 } 

@@ -9,18 +9,17 @@ import { IPokemon } from '../../../data/interface/pokemon.interface';
 })
 export class PokemonListComponent implements OnInit, OnDestroy {
 
-    pokemon: any;
+    pokemon: IPokemon;
 
     constructor(private _pokemon: PokemonService){
 
     }
 
     ngOnInit() {
-        this._pokemon.getPokemon().subscribe(res => {
-            this.pokemon = res;
+        this._pokemon.getPokemons().subscribe(res => {
+            this.pokemon = res[0];
             console.log(this.pokemon);
-            console.log(this.pokemon.name);
-            
+            console.log(this.pokemon.name);  
         })
     }
 
