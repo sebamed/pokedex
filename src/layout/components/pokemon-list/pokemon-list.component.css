@@ -4,6 +4,12 @@
 }
 
 .card {
+    display: inline-block;
+    margin: 35px;
+}
+
+.content {
+    text-align: center;
 }
 
 /* card hovers */
@@ -58,7 +64,6 @@
     font-size: 1.5rem;
     line-height: 1.5rem;
     letter-spacing: 1.2px;
-
 }
 
 .card-img img {
@@ -81,12 +86,11 @@
 .card-top-bg::before {
     content: '';
     position: absolute;
-    width: 100%;
+    width: 50%;
     height: 100%;
     background-image: url('/assets/svg/corner-card-right.svg');
     background-repeat: no-repeat;
-    background-position: bottom right;
-    background-size: 20%;
+    background-position: 100% 100%;
 }
 
 .card-img {
