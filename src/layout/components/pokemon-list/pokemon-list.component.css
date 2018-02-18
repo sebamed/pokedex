@@ -3,117 +3,130 @@
 }
 
 .card {
-    /*background: url('../../../assets/svg/kartica1.svg');
-    background-repeat: no-repeat;
-    */
-    padding: 20px 30px;
+    border: 1px solid #008cba;
+}
+
+.card-header {
+    margin: 0 10px;
+    border: 1px solid #000;
+    background-color: #f6f6f6;
     position: relative;
-    cursor: pointer;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+    text-align: center;
 }
 
-.card:hover {
-    -webkit-box-shadow: -3px -4px 3px 0px rgba(50, 50, 50, 0.5);
-    -moz-box-shadow: -3px -4px 3px 0px rgba(50, 50, 50, 0.5);
-    box-shadow: -3px -4px 3px 0px rgba(50, 50, 50, 0.5);
-}
-
-.card::after {
+.card-header::before {
     content: '';
     position: absolute;
-    background-color: #213861;
-    border-top-left-radius: 5px;
+    width: 50%;
     top: 0;
     bottom: 0;
     left: 0;
-    width: 65%;
+    background-color: #fff;
 }
 
-.card::before {
-    content: '';
-    position: absolute;
-    background-image: url('../../../assets/svg/corner.svg');
-    background-repeat: no-repeat;
-    background-position: 100% 100%;
-    background-size: 9%;
-    background-color: #2B4B86;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-
-.pokemon {
+.card-header h4, .card-img img {
     position: relative;
-    z-index: 1;
+    z-index: 100;
 }
 
-.pokemon-info {
-    float: left;
-    width: 60%;
-}
-
-.pokemon-info h4 {
-    color: #FFCB05;
-    margin: 10px 5px;
-    letter-spacing: 1.5px;
-    font-weight: lighter;
-    line-height: 1.3rem;
-    font-size: 1.3rem;
-}
-
-.ball {
-    background-color: #e6ac00;
+.card-footer {
+    margin: 0;
+    background-color: #335c9b;
     border: 1px solid #FFCB05;
+    text-align: center;
+}
+
+.card-img {
+    text-align: center;
+}
+
+.icons-list {
+    list-style-type: none;
+}
+
+.icons-list li {
+    display: inline;
     border-radius: 50%;
+    background: #fff;
+    border: 1px solid #fff;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+.diamond {
     text-align: center;
     position: relative;
+    background: #e6ac00;
+    margin: 50px 130px 30px 130px;
+    width: 65px;
+    height: 65px;
+    -ms-transform: rotate(45deg) translate(10px, -10px);
+    -webkit-transform: rotate(45deg) translate(10px, -10px);
+    -o-transform: rotate(45deg) translate(10px, -10px);
+    transform: rotate(45deg) translate(10px, -10px);
+    -ms-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
 }
 
-.ball span {
-    color: #fff;
-}
-
-.pokemon-id {
-    margin: 35px 5px 10px 15px;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-}
-
-.pokemon-id span {
-    font-size: 1.5rem;
-}
-
-.pokemon-ind {
+.diamond::after {
+    content: '';
+    background: #FFCB05;
+    border: 1px solid #fff;
     position: absolute;
-    top: 35px;
-    left: 25%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    -ms-transform: translate(-10px, 10px);
+    -webkit-transform: translate(-10px, 10px);
+    -o-transform: translate(-10px, 10px);
+    transform: translate(-10px, 10px);
+    -ms-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
 }
 
-.poke-ind {
-    margin: 20px 5px 10px 15px;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
+.card-icons {
+    margin: 10px 10px;
+    border: 1px solid #008cba;
+    padding: 10px;
 }
 
-.poke-ind p {
-    margin-left: 30%;
-    position: absolute;
-    top: -60%;
-    left: 100%;
-    color: #FFCB05;
+.diamond:hover::after {
+    transform: translate(0px, 0px);
 }
 
-.pokemon-image {
-    float: right;
-    padding: 10px 0;
+.diamond:hover {
+    transform: rotate(45deg) translate(0px, 0px);
+    background-color: #fff;
 }
 
+.diamond:hover p {
+    transform: rotate(-45deg) translate(0px, 0px);
+}
+
+.diamond p {
+    z-index: 1;
+    position: fixed;
+    transform: rotate(-45deg);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    -ms-transform: rotate(-45deg) translate(-15px, 0);
+    -webkit-transform: rotate(-45deg) translate(-15px, 0);
+    -o-transform: rotate(-45deg) translate(-15px, 0);
+    transform: rotate(-45deg) translate(-15px, 0);
+    -ms-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
 
 .go-top {
     position: fixed;
@@ -136,4 +149,10 @@
 
 .separator {
     padding: 65px 0;
+}
+
+/* reset */
+
+ul {
+    padding: 0;
 }
