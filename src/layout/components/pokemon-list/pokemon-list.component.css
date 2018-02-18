@@ -14,6 +14,17 @@
 
 /* card hovers */
 
+.card {
+    -ms-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.1, 1.1);
+}
+
 .card:hover .diamond {
     -ms-transform: rotate(45deg) translate(0px, 0px);
     -webkit-transform: rotate(45deg) translate(0px, 0px);
