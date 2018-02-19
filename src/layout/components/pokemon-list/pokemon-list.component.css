@@ -21,8 +21,11 @@
     transition: all .3s ease-in-out;
 }
 
-.card:hover {
-    transform: scale(1.06, 1.06);
+.card:hover .card-header {
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
 }
 
 .card:hover .diamond {
@@ -52,6 +55,15 @@
     background-color: #f6f6f6;
     position: relative;
     text-align: center;
+    -ms-transform: translateY(70px);
+    -webkit-transform: translateY(70px);
+    -o-transform: translateY(70px);
+    transform: translateY(70px);
+    /* dodaj za sve browsere */
+    -ms-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 .card-header::before {
@@ -64,9 +76,27 @@
     background-color: #fff;
 }
 
-.card-header h4, .card-img img {
+.card-header h4, .card-img img, .card-types ul {
     position: relative;
     z-index: 100;
+}
+
+.card-types ul {
+    list-style-type: none;
+}
+
+.green {
+    background-color: #3bd662;
+}
+
+.red {
+    background-color: #df4c39;
+}
+
+.card-types ul li {
+    display: inline;
+    padding: 10px 12px;
+    color: #fff;
 }
 
 .card-header h4 {
@@ -74,13 +104,16 @@
     font-size: 1.5rem;
     line-height: 1.5rem;
     letter-spacing: 1.2px;
+    margin-bottom: 10px;
 }
 
 .card-img img {
-    width: 190px;
+    width: 150px;
 }
 
 .card-footer {
+    position: relative;
+    z-index: 9;
     margin: 0;
     background-color: #335c9b;
     border: 1px solid transparent;
@@ -91,6 +124,8 @@
     background-image: url('/assets/svg/corner-card-left.svg');
     background-repeat: no-repeat;
     position: relative;
+    background-size: 30%;
+    background-position: 0% 100%;
 }
 
 .card-top-bg::before {
@@ -100,6 +135,7 @@
     height: 100%;
     background-image: url('/assets/svg/corner-card-right.svg');
     background-repeat: no-repeat;
+    background-size: 30%;
     background-position: 100% 100%;
 }
 
