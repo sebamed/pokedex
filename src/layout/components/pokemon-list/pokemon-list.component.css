@@ -22,7 +22,7 @@
 }
 
 .card:hover {
-    transform: scale(1.1, 1.1);
+    transform: scale(1.06, 1.06);
 }
 
 .card:hover .diamond {
@@ -30,7 +30,6 @@
     -webkit-transform: rotate(45deg) translate(0px, 0px);
     -o-transform: rotate(45deg) translate(0px, 0px);
     transform: rotate(45deg) translate(0px, 0px);
-    background-color: #fff;
 }
 
 .card:hover .diamond::after {
