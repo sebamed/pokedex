@@ -37,11 +37,13 @@
     background-size: 100%;
     position: relative;
     top: 10px;
-    -webkit-transform: rotate(7deg);
-    -moz-transform: rotate(7deg);
-    -ms-transform: rotate(7deg);
-    -o-transform: rotate(7deg);
-    transform: rotate(7deg);
+    left: 0;
+    bottom: 0;
+    -webkit-transform: rotate(7deg) translateX(-50px);
+    -moz-transform: rotate(7deg) translateX(-50px);
+    -ms-transform: rotate(7deg) translateX(-50px);
+    -o-transform: rotate(7deg) translateX(-50px);
+    transform: rotate(7deg) translateX(-50px);
 }
 
 ul {

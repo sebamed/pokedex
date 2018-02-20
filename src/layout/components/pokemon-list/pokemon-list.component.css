@@ -5,7 +5,7 @@
 
 .card {
     display: inline-block;
-    margin: 35px;
+    margin: 10px 35px;
 }
 
 .content {
@@ -83,14 +83,6 @@
 
 .card-types ul {
     list-style-type: none;
-}
-
-.green {
-    background-color: #3bd662;
-}
-
-.red {
-    background-color: #df4c39;
 }
 
 .card-types ul li {
@@ -197,6 +189,9 @@
 }
 
 .diamond p {
+    color: #335c9b;
+    letter-spacing: 1px;
+    font-weight: lighter;
     z-index: 1;
     position: fixed;
     transform: rotate(-45deg);

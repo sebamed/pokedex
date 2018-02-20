@@ -1,11 +1,68 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import url(https://fonts.googleapis.com/css?family=Righteous);
 @import url(https://fonts.googleapis.com/css?family=Jura);
-
 html, body {
     font-family: Jura;
 }
 
 .left {
     float: left;
+}
+
+/* Pokemon types */
+
+.grass {
+    background-color: #3bd662;
+}
+
+.fire {
+    background-color: #df4c39;
+}
+
+.water {
+    background-color: #2f90c9;
+}
+
+.rock {
+    background-color: #4b392d;
+}
+
+.fighting {
+    background-color: #6e4d2e;
+}
+
+.poison {
+    background-color: #9843c0;
+}
+
+.steel {
+    background-color: #aaaaaa;
+}
+
+.electric {
+    background-color: #f7cd12;
+}
+
+.normal {
+    background-color: #ff9100;
+}
+
+.flying {
+    background-color: #cec578;
+}
+
+.ghost {
+    background-color: #ddb4f0;
+}
+
+.psychic {
+    background-color: #c47ce6;
+}
+
+.bug {
+    background-color: #81b14a;
+}
+
+.dragon {
+    background-color: #a485c2;
 }
