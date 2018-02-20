@@ -7,7 +7,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 // Pipes 
-import { CapitalizeFirstPipe } from '../pipes/capitalize-first.pipe';
+import { CapitalizeLettersPipe } from '../pipes/capitalize-letters.pipe';
 
 // routing 
 import { Routing } from './app.routing';
@@ -21,7 +21,7 @@ import { PokemonListComponent } from '../layout/components/pokemon-list/pokemon-
 
 @NgModule({
   declarations: [
-    CapitalizeFirstPipe,
+    CapitalizeLettersPipe,
     MenuComponent,
     PokemonListComponent
   ],
