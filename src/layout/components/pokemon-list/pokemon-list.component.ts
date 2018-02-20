@@ -9,7 +9,7 @@ import { IPokemon } from '../../../data/interface/pokemon.interface';
 })
 export class PokemonListComponent implements OnInit, OnDestroy {
 
-    pokemon: IPokemon[];
+    pokemonList: IPokemon[];
 
     pokemonStringify: String = '123';
 
@@ -27,8 +27,8 @@ export class PokemonListComponent implements OnInit, OnDestroy {
 
     setPokemons() {
         this._pokemon.getPokemons().subscribe(res => {
-            this.pokemon = res;
-            console.log(this.pokemon);
+            this.pokemonList = res;
+            console.log(this.pokemonList);
         })
     }
 }
