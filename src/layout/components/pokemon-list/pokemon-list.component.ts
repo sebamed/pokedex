@@ -9,38 +9,26 @@ import { IPokemon } from '../../../data/interface/pokemon.interface';
 })
 export class PokemonListComponent implements OnInit, OnDestroy {
 
-    pokemons: any;
-
-    kalup: Object = {}
+    pokemon: IPokemon[];
 
     pokemonStringify: String = '123';
 
-    constructor(private _pokemon: PokemonService){
+    constructor(private _pokemon: PokemonService) {
 
     }
 
     ngOnInit() {
-        // testing
-        this._pokemon.getPokemons().subscribe(res => {
-            let keys = Object.keys(res);
-            let test = res['name'];
-            this.kalup['id'] = res['id'];
-            this.kalup['name'] = res['name'];
-            this.kalup['height'] = res['height'];
-            this.kalup['weight'] = res['weight'];
-            this.kalup['order'] = res['order'];
-            this.kalup['abilities'] = res['abilities'];
-            this.kalup['sprites'] = res['sprites'];
-            this.kalup['types'] = res['types'];
-            this.pokemonStringify = JSON.stringify(this.kalup);
-            console.log(keys);
-            console.log(this.kalup);
-            // this.pokemons = JSON.stringify(res);
-            // console.log(this.pokemons);
-        })
+        this.setPokemons();
     }
 
     ngOnDestroy() {
 
+    }
+
+    setPokemons() {
+        this._pokemon.getPokemons().subscribe(res => {
+            this.pokemon = res;
+            console.log(this.pokemon);
+        })
     }
 }
