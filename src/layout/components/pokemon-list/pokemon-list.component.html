@@ -4,21 +4,20 @@
             <div class="card" *ngFor="let pokemon of pokemonList">
                 <div class="card-top-bg">
                     <div class="card-header">
-                        <h4>{{pokemon.name}}</h4>
+                        <h4>{{pokemon.name | capitalizeFirst }}</h4>
                         <div class="card-img">
-                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" alt="" />
+                            <img src="{{ pokemon.sprites.front_default }}" alt="" />
                         </div>
                         <div class="card-types">
                             <ul>
-                                <li class="grass">grass</li>
-                                <li class="fire">fire</li>
+                                <li *ngFor="let type of pokemon.types" class="{{ type.type.name }}">{{ type.type.name }}</li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer">
                     <div class="diamond">
-                        <p>17</p>
+                        <p>{{ pokemon.id }}</p>
                     </div>
                     <div class="card-icons">
                         <ul class="icons-list">

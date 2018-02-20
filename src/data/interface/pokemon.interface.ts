@@ -10,5 +10,5 @@ export interface IPokemon {
     order: number;
     abilities: IAbility[];
     types: IType[];
-    sprites: ISprite[];
+    sprites: ISprite;
 }
