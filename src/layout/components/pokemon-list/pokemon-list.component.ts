@@ -4,6 +4,7 @@ import { IPokemon } from '../../../data/interface/pokemon.interface';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TypesModalComponent } from '../../modals/type/type-modal.component';
 import { IType } from '../../../data/interface/type.interface';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
     selector: 'app-poke-list',
@@ -16,6 +17,9 @@ export class PokemonListComponent implements OnInit, OnDestroy {
 
     pokemonStringify: String = '123';
 
+    // subscriptions
+    subSetPokemon: Subscription;
+
     constructor(private _pokemon: PokemonService,
         private modalService: NgbModal) {
     }
@@ -25,11 +29,11 @@ export class PokemonListComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-
+        this.subSetPokemon.unsubscribe();
     }
 
     setPokemons() {
-        this._pokemon.getPokemons().subscribe(res => {
+        this.subSetPokemon = this._pokemon.getPokemons().subscribe(res => {
             this.pokemonList = res;
             //console.log(this.pokemonList);
             console.log(this.pokemonList[0].sprites.front_default);

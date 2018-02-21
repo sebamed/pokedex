@@ -1,20 +1,57 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 
-import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { IType } from '../../../data/interface/type.interface';
+import { PokemonService } from '../../../data/services/pokemon.service';
+import { Type } from '../../../data/models/type.model';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
-  selector: 'modal-types',
-  templateUrl: './type-modal.component.html',
-  styleUrls: ['./type-modal.component.css']
+    selector: 'modal-types',
+    templateUrl: './type-modal.component.html',
+    styleUrls: ['./type-modal.component.css']
 })
-export class TypesModalComponent implements OnInit{
-  @Input() type: IType;
+export class TypesModalComponent implements OnInit, OnDestroy {
+    @Input() type: IType;
 
-  constructor(public activeModal: NgbActiveModal) {}
+    typesList: Type[];
+    currentType: Type;
 
-  ngOnInit() {
-      console.log(this.type.type.name);
-      console.log(this.type.type.url);
-  }
+    // subscriptions
+    subTypesList: Subscription;
+
+
+    constructor(public activeModal: NgbActiveModal,
+        private _pokemon: PokemonService) { }
+
+    ngOnInit() {
+        console.log(this.type.type.name);
+        console.log(this.type.type.url);
+        this.setTypes();
+    }
+
+    ngOnDestroy() {
+        this.subTypesList.unsubscribe();
+    }
+
+    setTypes() {
+        this.subTypesList = this._pokemon.getTypes().subscribe(res => {
+            this.typesList = res;
+            console.log(this.typesList);
+        },
+            error => console.log(error),
+            () => {
+                // this happens after data is fetched
+                this.setCurrentType();
+            })
+    }
+
+    setCurrentType() {
+        for (let i = 0; i < this.typesList.length; i++) {
+            if (this.typesList[i].name === this.type.type.name) {
+                this.currentType = this.typesList[i];
+                console.log(this.currentType);
+            }
+        }
+    }
 }

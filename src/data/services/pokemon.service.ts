@@ -5,9 +5,11 @@ import 'rxjs/add/operator/map';
 
 // interfaces
 import { IPokemon } from '../interface/pokemon.interface'
+import { Type } from '../models/type.model';
 
 @Injectable()
 export class PokemonService {
+
     constructor(private _http: Http) {
 
     }
@@ -17,6 +19,9 @@ export class PokemonService {
         return this._http.get('data/api/pokemon.json').map(res => <IPokemon[]>res.json());
     }
 
+    getTypes() {
+        return this._http.get('data/api/types.json').map(res => <Type[]>res.json());
+    }
 
     /// GETTING POKEMON FROM API AND STRINGIFY ///
     // this._pokemon.getPokemons().subscribe(res => {
