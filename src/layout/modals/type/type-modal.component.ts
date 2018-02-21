@@ -41,8 +41,8 @@ export class TypesModalComponent implements OnInit, OnDestroy {
         },
             error => console.log(error),
             () => {
-                // this happens after data is fetched
                 this.setCurrentType();
+                // this happens after data is fetched
             })
     }
 
@@ -50,7 +50,9 @@ export class TypesModalComponent implements OnInit, OnDestroy {
         for (let i = 0; i < this.typesList.length; i++) {
             if (this.typesList[i].name === this.type.type.name) {
                 this.currentType = this.typesList[i];
+                console.log(' aaaaa ');
                 console.log(this.currentType);
+                return;
             }
         }
     }

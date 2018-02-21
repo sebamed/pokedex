@@ -1,11 +1,30 @@
 <div id="types-modal" ngDefaultControl [(ngModel)]="type.type.name">
     <div class="{{type.type.name}} modal-header">
         <h4 class="modal-title">{{ type.type.name | capitalizeLetters:'01' }} type Pokemon</h4>
-        <a href="" (click)="activeModal.dismiss('Cross click')">
+        <a (click)="activeModal.dismiss('Cross click')">
             <i class="{{type.type.name}} fa fa-close"></i>
         </a>
     </div>
     <div class="{{type.type.name}} modal-body">
-        <p>Hello!</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque, dolores quam debitis voluptas, iusto praesentium
+            nobis porro iure obcaecati similique, velit hic quaerat eum at. Vel ducimus eveniet alias saepe?!</p>
+        <div class="row">
+            <div class="col-6">
+                <h4>Half Damage From:</h4>
+                <div *ngIf="currentType && currentType.damage_relations.half_damage_from">
+                    <div *ngFor="let half_from of currentType.damage_relations.half_damage_from" class="{{half_from.name}} type">{{half_from.name}}</div>
+                </div>
+            </div>
+            <div class="col-6">
+                <h4>Half Damage To:</h4>
+                <div *ngIf="currentType && currentType.damage_relations.half_damage_to">
+                    <div *ngFor="let half_to of currentType.damage_relations.half_damage_to" class="{{half_to.name}} type">
+                        {{half_to.name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
 </div>

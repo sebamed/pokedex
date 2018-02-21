@@ -20,6 +20,7 @@ export class PokemonService {
     }
 
     getTypes() {
+        // Returns an array of types (Type class - model)
         return this._http.get('data/api/types.json').map(res => <Type[]>res.json());
     }
 
