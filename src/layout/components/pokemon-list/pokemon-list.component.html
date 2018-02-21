@@ -1,5 +1,5 @@
 <div id="pokemon-list">
-    <div class="row">
+    <div class="poke-row">
         <div class="content">
             <div class="card" *ngFor="let pokemon of pokemonList">
                 <div class="card-top-bg">
@@ -10,7 +10,7 @@
                         </div>
                         <div class="card-types">
                             <ul>
-                                <li *ngFor="let type of pokemon.types" class="{{ type.type.name }}">{{ type.type.name }}</li>
+                                <li *ngFor="let type of pokemon.types" class="{{ type.type.name }}" (click)="openTypesModal(type)">{{ type.type.name }}</li>
                             </ul>
                         </div>
                     </div>

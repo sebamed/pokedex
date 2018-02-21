@@ -90,6 +90,11 @@
     padding: 10px 12px;
     color: #fff;
     margin: 5px;
+    cursor: pointer;
+}
+
+.card-types ul li:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.16);
 }
 
 .card-header h4 {

@@ -1,0 +1,11 @@
+<div id="types-modal" ngDefaultControl [(ngModel)]="type.type.name">
+    <div class="{{type.type.name}} modal-header">
+        <h4 class="modal-title">{{ type.type.name | capitalizeLetters:'01' }} type Pokemon</h4>
+        <a href="" (click)="activeModal.dismiss('Cross click')">
+            <i class="{{type.type.name}} fa fa-close"></i>
+        </a>
+    </div>
+    <div class="{{type.type.name}} modal-body">
+        <p>Hello!</p>
+    </div>
+</div>
