@@ -1,5 +1,6 @@
 # Greetings
 - [Pokemon API](https://pokeapi.co/) - Free pokemon REST API
+- [ng-bootstrap](https://github.com/ng-bootstrap/ng-bootstrap) - Angular 4 directives with Bootstrap
 
 # Demo
 Demo will be uploaded soon!
