@@ -13,7 +13,7 @@
         "data/api"
       ],
       "index": "index.html",
-      "main": "main.ts",
+      "main": "main.ts",  
       "polyfills": "polyfills.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
@@ -22,7 +22,7 @@
       "styles": [
         "../node_modules/font-awesome/css/font-awesome.min.css",
         "../node_modules/normalize.css/normalize.css",
-        "../node_modules/blueprint-css/dist/blueprint.min.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.css",
         "styles.css"
       ],
       "scripts": [
