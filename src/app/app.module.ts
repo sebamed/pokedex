@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Pipes 
 import { CapitalizeLettersPipe } from '../pipes/capitalize-letters.pipe';
+import { FilterPipe } from '../pipes/filter.pipe';
 
 // routing 
 import { Routing } from './app.routing';
@@ -26,9 +27,10 @@ import { TypesModalComponent } from '../layout/modals/type/type-modal.component'
 @NgModule({
   declarations: [
     CapitalizeLettersPipe,
+    FilterPipe,
     MenuComponent,
     PokemonListComponent,
-    TypesModalComponent
+    TypesModalComponent   
   ],
   imports: [
     BrowserModule,

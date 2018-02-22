@@ -1,7 +1,10 @@
 <div id="pokemon-list">
     <div class="poke-row">
+        <div class="input-field">
+            <input ngDefaultControl [(ngModel)]="searchText" id="search" type="search" class="validate" placeholder="search pokemon">
+        </div>
         <div class="content">
-            <div class="card" *ngFor="let pokemon of pokemonList">
+            <div class="card" *ngFor="let pokemon of pokemonList | filter : searchText">
                 <div class="card-top-bg">
                     <div class="card-header">
                         <h4>{{pokemon.name | capitalizeLetters:'01' }}</h4>
