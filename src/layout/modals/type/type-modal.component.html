@@ -12,19 +12,19 @@
             <div class="col-6">
                 <h4>Half Damage From:</h4>
                 <div *ngIf="currentType && currentType.damage_relations.half_damage_from">
-                    <div *ngFor="let half_from of currentType.damage_relations.half_damage_from" class="{{half_from.name}} type">{{half_from.name}}</div>
-                </div>
-            </div>
-            <div class="col-6">
-                <h4>Half Damage To:</h4>
-                <div *ngIf="currentType && currentType.damage_relations.half_damage_to">
-                    <div *ngFor="let half_to of currentType.damage_relations.half_damage_to" class="{{half_to.name}} type">
-                        {{half_to.name}}
+                    <div *ngFor="let half_from of currentType.damage_relations.half_damage_from" class="{{half_from.name}} type">
+                        {{half_from.name}}
                     </div>
                 </div>
             </div>
         </div>
-
+        <div class="row">
+            <div class="col-12">
+                <h4>Attacks:</h4>
+                <div *ngIf="currentType">
+                    <div *ngFor="let attack of currentType.moves" class="attack">{{ attack.name }}</div>
+                </div>
+            </div>
+        </div>
     </div>
-
 </div>
