@@ -8,18 +8,66 @@
     <div class="{{type.type.name}} modal-body">
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque, dolores quam debitis voluptas, iusto praesentium
             nobis porro iure obcaecati similique, velit hic quaerat eum at. Vel ducimus eveniet alias saepe?!</p>
+        <!-- no dmg -->
         <div class="row">
-            <div class="col-6">
-                <h4>Half Damage From:</h4>
-                <div *ngIf="currentType && currentType.damage_relations.half_damage_from">
-                    <div *ngFor="let half_from of currentType.damage_relations.half_damage_from" class="{{half_from.name}} type">
-                        {{half_from.name}}
+            <div class="damage col-6">
+                <h4>No damage from:</h4>
+                <div *ngIf="currentType && currentType.damage_relations.no_damage_from">
+                    <div *ngFor="let no_from of currentType.damage_relations.no_damage_from" class="{{no_from.name}} type" (click)="openTypesModal(no_from.name)">
+                        {{no_from.name}}
+                    </div>
+                </div>
+            </div>
+            <div class="damage col-6">
+                <h4>No damage to:</h4>
+                <div *ngIf="currentType && currentType.damage_relations.no_damage_to">
+                    <div *ngFor="let no_to of currentType.damage_relations.no_damage_to" class="{{no_to.name}} type" (click)="openTypesModal(no_to.name)">
+                        {{no_to.name}}
                     </div>
                 </div>
             </div>
         </div>
+        <!-- half dmg -->
         <div class="row">
-            <div class="col-12">
+            <div class="damage col-6">
+                <h4>Half damage from:</h4>
+                <div *ngIf="currentType && currentType.damage_relations.half_damage_from">
+                    <div *ngFor="let half_from of currentType.damage_relations.half_damage_from" class="{{half_from.name}} type" (click)="openTypesModal(half_from.name)">
+                        {{half_from.name}}
+                    </div>
+                </div>
+            </div>
+            <div class="damage col-6">
+                <h4>Half damage to:</h4>
+                <div *ngIf="currentType && currentType.damage_relations.half_damage_to">
+                    <div *ngFor="let half_to of currentType.damage_relations.half_damage_to" class="{{half_to.name}} type" (click)="openTypesModal(half_to.name)">
+                        {{half_to.name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- double dmg -->
+        <div class="row">
+            <div class="damage col-6">
+                <h4>Double damage from:</h4>
+                <div *ngIf="currentType && currentType.damage_relations.double_damage_from">
+                    <div *ngFor="let double_from of currentType.damage_relations.double_damage_from" class="{{double_from.name}} type" (click)="openTypesModal(double_from.name)">
+                        {{double_from.name}}
+                    </div>
+                </div>
+            </div>
+            <div class="damage col-6">
+                <h4>Double damage to:</h4>
+                <div *ngIf="currentType && currentType.damage_relations.double_damage_to">
+                    <div *ngFor="let double_to of currentType.damage_relations.double_damage_to" class="{{double_to.name}} type" (click)="openTypesModal(double_to.name)">
+                        {{double_to.name}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- attacks -->
+        <div class="row">
+            <div class="attacks col-12">
                 <h4>Attacks:</h4>
                 <div *ngIf="currentType">
                     <div *ngFor="let attack of currentType.moves" class="attack">{{ attack.name }}</div>

@@ -22,11 +22,10 @@ export class TypesModalComponent implements OnInit, OnDestroy {
 
 
     constructor(public activeModal: NgbActiveModal,
-        private _pokemon: PokemonService) { }
+        private _pokemon: PokemonService, private modalService: NgbModal) { }
 
     ngOnInit() {
-        console.log(this.type.type.name);
-        console.log(this.type.type.url);
+        console.log(this.type);
         this.setTypes();
     }
 
@@ -55,5 +54,19 @@ export class TypesModalComponent implements OnInit, OnDestroy {
                 return;
             }
         }
+    }
+
+    openTypesModal(type: string) {
+        this.activeModal.close();
+        let newType: IType = {
+            slot: 0,
+            type: {
+                url: "string",
+                name: type
+            }
+        };
+        console.log(newType);
+        const typesModalRef = this.modalService.open(TypesModalComponent);
+        typesModalRef.componentInstance.type = newType;
     }
 }

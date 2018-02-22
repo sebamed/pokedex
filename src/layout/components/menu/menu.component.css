@@ -21,7 +21,7 @@
     text-align: center;
     height: 90px;
     line-height: 90px;
-    z-index: 999;
+    z-index: 500;
     text-align: center;
     position: fixed;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .2);

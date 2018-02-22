@@ -37,11 +37,15 @@ export class PokemonListComponent implements OnInit, OnDestroy {
             this.pokemonList = res;
             //console.log(this.pokemonList);
             console.log(this.pokemonList[0].sprites.front_default);
-        })
+        },
+            error => console.log(error),
+            () => {
+                
+            });
     }
 
     openTypesModal(type: IType) {
         const typesModalRef = this.modalService.open(TypesModalComponent);
         typesModalRef.componentInstance.type = type;
-      }
+    }
 }

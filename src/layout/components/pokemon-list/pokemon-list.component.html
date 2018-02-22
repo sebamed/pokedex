@@ -4,36 +4,38 @@
             <input ngDefaultControl [(ngModel)]="searchText" id="search" type="search" class="validate" placeholder="search pokemon">
         </div>
         <div class="content">
-            <div class="card" *ngFor="let pokemon of pokemonList | filter : searchText">
-                <div class="card-top-bg">
-                    <div class="card-header">
-                        <h4>{{pokemon.name | capitalizeLetters:'01' }}</h4>
-                        <div class="card-img">
-                            <img src="{{ pokemon.sprites.front_default }}" alt="" />
+            <div *ngIf="pokemonList">
+                <div class="card" *ngFor="let pokemon of pokemonList | filter : searchText">
+                    <div class="card-top-bg">
+                        <div class="card-header">
+                            <h4>{{pokemon.name | capitalizeLetters:'01' }}</h4>
+                            <div class="card-img">
+                                <img src="{{ pokemon.sprites.front_default }}" alt="" />
+                            </div>
+                            <div class="card-types">
+                                <ul>
+                                    <li *ngFor="let type of pokemon.types" class="{{ type.type.name }}" (click)="openTypesModal(type)">{{ type.type.name }}</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="card-types">
-                            <ul>
-                                <li *ngFor="let type of pokemon.types" class="{{ type.type.name }}" (click)="openTypesModal(type)">{{ type.type.name }}</li>
+                    </div>
+                    <div class="card-footer">
+                        <div class="diamond">
+                            <p>{{ pokemon.id }}</p>
+                        </div>
+                        <div class="card-icons">
+                            <ul class="icons-list">
+                                <li>
+                                    <i class="fa fa-leaf"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-leaf"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-leaf"></i>
+                                </li>
                             </ul>
                         </div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="diamond">
-                        <p>{{ pokemon.id }}</p>
-                    </div>
-                    <div class="card-icons">
-                        <ul class="icons-list">
-                            <li>
-                                <i class="fa fa-leaf"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-leaf"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-leaf"></i>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
