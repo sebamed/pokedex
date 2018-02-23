@@ -5,7 +5,7 @@
         </div>
         <div class="content">
             <div *ngIf="pokemonList">
-                <div class="card" *ngFor="let pokemon of pokemonList | filter : searchText">
+                <div class="card" *ngFor="let pokemon of pokemonList | filter : searchText" [routerLink]="['/pokemon', pokemon.id]">
                     <div class="card-top-bg">
                         <div class="card-header">
                             <h4>{{pokemon.name | capitalizeLetters:'01' }}</h4>

@@ -20,6 +20,7 @@ import { PokemonService } from '../data/services/pokemon.service';
 // Components
 import { MenuComponent } from '../layout/components/menu/menu.component';
 import { PokemonListComponent } from '../layout/components/pokemon-list/pokemon-list.component';
+import { PokemonComponent } from '../layout/components/pokemon/pokemon.component';
 
 // Modals 
 import { TypesModalComponent } from '../layout/modals/type/type-modal.component';
@@ -30,6 +31,7 @@ import { TypesModalComponent } from '../layout/modals/type/type-modal.component'
     FilterPipe,
     MenuComponent,
     PokemonListComponent,
+    PokemonComponent,
     TypesModalComponent   
   ],
   imports: [
