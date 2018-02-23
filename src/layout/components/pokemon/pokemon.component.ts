@@ -4,6 +4,8 @@ import { Subscription } from 'rxjs/Subscription';
 import { PokemonService } from '../../../data/services/pokemon.service';
 import { IPokemon } from '../../../data/interface/pokemon.interface';
 
+declare var $: any;
+
 @Component({
     selector: 'app-pokemon',
     templateUrl: './pokemon.component.html',
@@ -13,10 +15,12 @@ export class PokemonComponent implements OnInit, OnDestroy {
 
     // subscriptions
     subRouterParams: Subscription;
+    subPokemon: Subscription;
 
+    // current
     currentPokemon: IPokemon;
-
     currentID: number;
+    currentMaleFemaleText: string = "male";
 
     constructor(private _route: ActivatedRoute,
         private _pokemon: PokemonService) {
@@ -30,20 +34,45 @@ export class PokemonComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         this.subRouterParams.unsubscribe();
+        this.subPokemon.unsubscribe();
     }
 
     getUrlParams() {
         this.subRouterParams = this._route.params.subscribe(params => {
-            console.log(params['id']);
             this.currentID = params['id'];
-            console.log(this.currentID);
         });
     }
 
     setCurrentPokemon() {
-        this._pokemon.getPokemons().subscribe(res => {
+        this.subPokemon = this._pokemon.getPokemons().subscribe(res => {
             this.currentPokemon = res[this.currentID - 1];
             console.log(this.currentPokemon);
-        })
+        },
+            error => console.log(error),
+            () => {
+                this.setClickableMaleFemale(this.currentPokemon);
+            });
+    }
+
+    toggleMaleFemale(event) {
+        let target = event.target || event.srcElement;
+        if (this.currentMaleFemaleText === 'male') { // switching to female
+            target.classList.remove('male');
+            target.classList.add('female');
+            this.currentMaleFemaleText = 'female';
+        } else { // swithing to male
+            target.classList.remove('female');
+            target.classList.add('male');
+            this.currentMaleFemaleText = 'male';
+        }
+    }
+
+    setClickableMaleFemale(pokemon: IPokemon) {
+        $(window).ready(function () {
+            if (pokemon.sprites.front_female == null) {
+                let button = document.getElementById('gender');
+                button.setAttribute('disabled', 'true');
+            }
+        });
     }
 }

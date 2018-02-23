@@ -62,6 +62,7 @@ ul {
     cursor: pointer;
     color: #FFCB05;
     padding: 15px 40px;
+    outline: none;
 }
 
 #nav-list li:hover {

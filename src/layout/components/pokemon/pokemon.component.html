@@ -1,1 +1,11 @@
-radi pokemon
+<div class="container" ngDefaultControl [(ngModel)]="currentPokemon" *ngIf="currentPokemon">
+    <div class="row">
+        <div class="col-md-6 pokemon-image">
+            <img src="/assets/png/favicon.png" alt="">
+            <div class="buttons">
+                <button id="gender" class="sex male" (click)="toggleMaleFemale($event)" ngDefaultControl [(ngModel)]="currentMaleFemaleText">{{currentMaleFemaleText}}</button>
+                <div class="rotate"><i class="fa fa-rotate-right"></i></div>
+            </div>
+        </div>
+    </div>
+</div>

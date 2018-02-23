@@ -6,6 +6,7 @@
     display: inline-block;
     margin: 10px 35px;
     cursor: pointer;
+    outline: none;
     -ms-transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
@@ -121,7 +122,7 @@
     background-image: url('/assets/svg/corner-card-left.svg');
     background-repeat: no-repeat;
     position: relative;
-    background-size: 30%;
+    background-size: 10%;
     background-position: 0% 100%;
 }
 
@@ -132,7 +133,7 @@
     height: 100%;
     background-image: url('/assets/svg/corner-card-right.svg');
     background-repeat: no-repeat;
-    background-size: 30%;
+    background-size: 10%;
     background-position: 100% 100%;
 }
 

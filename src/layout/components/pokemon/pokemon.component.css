@@ -1,0 +1,38 @@
+.pokemon-image {
+    border: 1px solid black;
+    text-align: center;
+    padding: 20px;
+}
+
+.buttons {
+    border: 1px solid green;
+    padding: 10px;
+}
+
+.sex {
+    padding: 10px 12px;
+    display: inline;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: #fff;
+}
+
+button:disabled {
+    cursor: initial;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.male {
+    background: #008cba;
+}
+
+.female {
+    background: red;
+}
+
+.rotate {
+    display: inline;
+    padding: 10px;
+    background: deeppink;
+}
