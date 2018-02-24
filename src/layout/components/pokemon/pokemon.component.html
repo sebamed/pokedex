@@ -1,11 +1,25 @@
+<div class="separator"></div>
 <div class="container" ngDefaultControl [(ngModel)]="currentPokemon" *ngIf="currentPokemon">
     <div class="row">
         <div class="col-md-6 pokemon-image">
-            <img src="/assets/png/favicon.png" alt="">
+            <img id="pokemon-image" class="responsive" src="{{currentPokemon.sprites.front_default}}" alt="">
             <div class="buttons">
-                <button id="gender" class="sex male" (click)="toggleMaleFemale($event)" ngDefaultControl [(ngModel)]="currentMaleFemaleText">{{currentMaleFemaleText}}</button>
-                <div class="rotate"><i class="fa fa-rotate-right"></i></div>
+                <button id="gender" class="sex {{currentMaleFemaleText}}" (click)="toggleMaleFemale($event)" ngDefaultControl [(ngModel)]="currentMaleFemaleText">
+                    <i id="gender-icon" class="fa fa-mars"></i>
+                </button>
+                <button id="rotate" class="rotate" (click)="rotateImage()">
+                    <i *ngIf="!currentRotation" class="fa fa-rotate-right"></i>
+                    <i *ngIf="currentRotation" class="fa fa-rotate-left"></i>
+                </button>
             </div>
+        </div>
+        <div class="col-md-6 pokemon-info">
+            <ul class="types">
+                <span>Types:</span>
+                <li class="{{type.type.name}} type" *ngFor="let type of currentPokemon.types" (click)="openTypesModal(type.type.name)">{{type.type.name}}</li>
+            </ul><br />
+            <p class="info-key">Weight:  <b>{{ currentPokemon.weight | number:'1.0' }}kg</b></p>
+            <p class="info-key">Height:  <b>{{ currentPokemon.height | number:'1.0' }}cm</b></p>
         </div>
     </div>
 </div>

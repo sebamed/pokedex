@@ -1,38 +1,74 @@
+.separator {
+    padding: 30px;
+}
+
 .pokemon-image {
-    border: 1px solid black;
+    border: 1px solid transparent;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
     text-align: center;
     padding: 20px;
+    background-color: rgb(243, 243, 243);
+}
+
+.pokemon-image img {
+    width: 300px;
 }
 
 .buttons {
-    border: 1px solid green;
     padding: 10px;
 }
 
-.sex {
+button, .type {
     padding: 10px 12px;
     display: inline;
     cursor: pointer;
     outline: none;
     border: none;
     color: #fff;
+    text-align: center;
+}
+
+.types {
+    list-style-type: none;
+}
+
+.type {
+    margin: 0 5px;
+}
+
+button:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.16);
 }
 
 button:disabled {
-    cursor: initial;
+    cursor: default;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
 .male {
-    background: #008cba;
+    background: rgb(120, 192, 252);
 }
 
 .female {
-    background: red;
+    background: rgb(248, 105, 105);
 }
 
 .rotate {
     display: inline;
     padding: 10px;
-    background: deeppink;
+    background: rgb(247, 179, 91);
+}
+
+.pokemon-info {
+    padding: 0 30px;
+}
+
+ul {
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+.info-key {
+    margin-bottom: 25px;
 }

@@ -21,7 +21,7 @@ export class PokemonListComponent implements OnInit, OnDestroy {
     subSetPokemon: Subscription;
 
     constructor(private _pokemon: PokemonService,
-        private modalService: NgbModal) {
+        private _modal: NgbModal) {
     }
 
     ngOnInit() {
@@ -45,7 +45,7 @@ export class PokemonListComponent implements OnInit, OnDestroy {
     }
 
     openTypesModal(type: IType) {
-        const typesModalRef = this.modalService.open(TypesModalComponent);
+        const typesModalRef = this._modal.open(TypesModalComponent);
         typesModalRef.componentInstance.type = type;
     }
 }
