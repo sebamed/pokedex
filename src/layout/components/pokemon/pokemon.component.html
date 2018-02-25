@@ -27,42 +27,16 @@
             </p>
         </div>
     </div>
+    <br />
     <!-- recently searched -->
     <div class="row">
         <div class="col-md-12 recently-searched text-center">
             <div *ngIf="searchedPokemon.length != 0">
                 <h4 align="left">Recently searched pokemon:</h4>
-                <div class="card" *ngFor="let pokemon of searchedPokemon" (click)="openNewPokemon(pokemon.id)">
-                    <div class="card-top-bg">
-                        <div class="card-header">
-                            <h4>{{pokemon.name | capitalizeLetters:'01' }}</h4>
-                            <div class="card-img">
-                                <img src="{{ pokemon.sprites.front_default }}" alt="" />
-                            </div>
-                            <div class="card-types">
-                                <ul>
-                                    <li *ngFor="let type of pokemon.types" class="{{ type.type.name }}" (click)="openTypesModal(type.type.name)">{{ type.type.name }}</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="diamond">
-                            <p>{{ pokemon.id }}</p>
-                        </div>
-                        <div class="card-icons">
-                            <ul class="icons-list">
-                                <li>
-                                    <i class="fa fa-leaf"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-leaf"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-leaf"></i>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="card-recent" *ngFor="let pokemon of searchedPokemon" (click)="openNewPokemon(pokemon.id)">
+                    <div class="recent-pokemon">
+                        <h4>{{ pokemon.name | capitalizeLetters:'01'}}</h4>
+                        <img src="{{ pokemon.sprites.front_default }}" alt="" />
                     </div>
                 </div>
             </div>
