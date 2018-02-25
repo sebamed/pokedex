@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/of';
 
 // interfaces
 import { IPokemon } from '../interface/pokemon.interface'
@@ -10,8 +11,27 @@ import { Type } from '../models/type.model';
 @Injectable()
 export class PokemonService {
 
+    searchedPokemon: IPokemon[] = [];
+
     constructor(private _http: Http) {
 
+    }
+
+    addSearchedPokemon(pokemon: IPokemon) {
+        for(let i = 0; i < this.searchedPokemon.length; i++){
+            if(pokemon.id == this.searchedPokemon[i].id){
+                console.log('jeste jednak');
+                return;
+            }
+        }
+        if(this.searchedPokemon.length == 3){
+            this.searchedPokemon.shift();
+        }
+        this.searchedPokemon.push(pokemon);
+    }
+
+    getSearchedPokemon() {
+        return Observable.of(this.searchedPokemon);
     }
 
     getPokemons() {

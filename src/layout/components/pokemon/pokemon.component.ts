@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { PokemonService } from '../../../data/services/pokemon.service';
 import { IPokemon } from '../../../data/interface/pokemon.interface';
@@ -12,7 +12,8 @@ declare var $: any;
 @Component({
     selector: 'app-pokemon',
     templateUrl: './pokemon.component.html',
-    styleUrls: ['./pokemon.component.css']
+    styleUrls: ['./pokemon.component.css',
+        '../pokemon-list/pokemon-list.component.css']
 })
 export class PokemonComponent implements OnInit, OnDestroy {
 
@@ -26,20 +27,43 @@ export class PokemonComponent implements OnInit, OnDestroy {
     currentMaleFemaleText: string = 'male';
     currentRotation: boolean = false;
 
+    // searched
+    searchedPokemon: IPokemon[];
+
     constructor(private _route: ActivatedRoute,
         private _pokemon: PokemonService,
-        private _modal: NgbModal) {
+        private _modal: NgbModal,
+        private _router: Router) {
 
     }
 
     ngOnInit() {
         this.getUrlParams();
         this.setCurrentPokemon();
+        this.setSearchedPokemon();
     }
 
     ngOnDestroy() {
+        this.addToSearchedPokemon();
         this.subRouterParams.unsubscribe();
         this.subPokemon.unsubscribe();
+    }
+
+    setSearchedPokemon() {
+        this._pokemon.getSearchedPokemon().subscribe(res => {
+            this.searchedPokemon = res;
+        },
+            error => console.log(error),
+            () => {
+
+            });
+    }
+
+    addToSearchedPokemon() {
+        this._pokemon.addSearchedPokemon(this.currentPokemon);
+        this._pokemon.getSearchedPokemon().subscribe(res => {
+            console.log(res);
+        });
     }
 
     getUrlParams() {
@@ -135,5 +159,11 @@ export class PokemonComponent implements OnInit, OnDestroy {
         console.log(newType);
         const typesModalRef = this._modal.open(TypesModalComponent);
         typesModalRef.componentInstance.type = newType;
+    }
+
+    openNewPokemon(id: number){
+        this._router.navigate(['/pokemon', id]);
+        this.ngOnDestroy();
+        this.ngOnInit();
     }
 }

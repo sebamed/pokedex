@@ -17,9 +17,58 @@
             <ul class="types">
                 <span>Types:</span>
                 <li class="{{type.type.name}} type" *ngFor="let type of currentPokemon.types" (click)="openTypesModal(type.type.name)">{{type.type.name}}</li>
-            </ul><br />
-            <p class="info-key">Weight:  <b>{{ currentPokemon.weight | number:'1.0' }}kg</b></p>
-            <p class="info-key">Height:  <b>{{ currentPokemon.height | number:'1.0' }}cm</b></p>
+            </ul>
+            <br />
+            <p class="info-key">Weight:
+                <b>{{ currentPokemon.weight | number:'1.0' }}kg</b>
+            </p>
+            <p class="info-key">Height:
+                <b>{{ currentPokemon.height | number:'1.0' }}cm</b>
+            </p>
+        </div>
+    </div>
+    <!-- recently searched -->
+    <div class="row">
+        <div class="col-md-12 recently-searched text-center">
+            <div *ngIf="searchedPokemon.length != 0">
+                <h4 align="left">Recently searched pokemon:</h4>
+                <div class="card" *ngFor="let pokemon of searchedPokemon" (click)="openNewPokemon(pokemon.id)">
+                    <div class="card-top-bg">
+                        <div class="card-header">
+                            <h4>{{pokemon.name | capitalizeLetters:'01' }}</h4>
+                            <div class="card-img">
+                                <img src="{{ pokemon.sprites.front_default }}" alt="" />
+                            </div>
+                            <div class="card-types">
+                                <ul>
+                                    <li *ngFor="let type of pokemon.types" class="{{ type.type.name }}" (click)="openTypesModal(type)">{{ type.type.name }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="diamond">
+                            <p>{{ pokemon.id }}</p>
+                        </div>
+                        <div class="card-icons">
+                            <ul class="icons-list">
+                                <li>
+                                    <i class="fa fa-leaf"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-leaf"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-leaf"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="searchedPokemon.length == 0">
+                <h4 align="left">No recently searched pokemon!</h4>
+            </div>
         </div>
     </div>
 </div>

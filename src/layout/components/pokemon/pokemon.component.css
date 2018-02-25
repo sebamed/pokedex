@@ -72,3 +72,11 @@ ul {
 .info-key {
     margin-bottom: 25px;
 }
+
+.recently-searched {
+    border: 1px solid #000;
+}
+
+.links {
+    border: 1px solid #008cba;
+}
