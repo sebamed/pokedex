@@ -77,6 +77,8 @@ ul {
     border: 1px solid #000;
 }
 
-.links {
-    border: 1px solid #008cba;
+.card {
+    margin: 0;
+    padding: 0;
 }
+ 

@@ -12,8 +12,8 @@ declare var $: any;
 @Component({
     selector: 'app-pokemon',
     templateUrl: './pokemon.component.html',
-    styleUrls: ['./pokemon.component.css',
-        '../pokemon-list/pokemon-list.component.css']
+    styleUrls: ['../pokemon-list/pokemon-list.component.css',
+        './pokemon.component.css']
 })
 export class PokemonComponent implements OnInit, OnDestroy {
 
@@ -161,7 +161,7 @@ export class PokemonComponent implements OnInit, OnDestroy {
         typesModalRef.componentInstance.type = newType;
     }
 
-    openNewPokemon(id: number){
+    openNewPokemon(id: number) {
         this._router.navigate(['/pokemon', id]);
         this.ngOnDestroy();
         this.ngOnInit();

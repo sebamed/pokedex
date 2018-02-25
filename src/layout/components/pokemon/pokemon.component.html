@@ -41,28 +41,13 @@
                             </div>
                             <div class="card-types">
                                 <ul>
-                                    <li *ngFor="let type of pokemon.types" class="{{ type.type.name }}" (click)="openTypesModal(type)">{{ type.type.name }}</li>
+                                    <li *ngFor="let type of pokemon.types" class="{{ type.type.name }}" (click)="openTypesModal(type.type.name)">{{ type.type.name }}</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <div class="diamond">
-                            <p>{{ pokemon.id }}</p>
-                        </div>
-                        <div class="card-icons">
-                            <ul class="icons-list">
-                                <li>
-                                    <i class="fa fa-leaf"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-leaf"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-leaf"></i>
-                                </li>
-                            </ul>
-                        </div>
+                        s
                     </div>
                 </div>
             </div>
