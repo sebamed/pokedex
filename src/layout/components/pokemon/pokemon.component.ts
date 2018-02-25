@@ -98,10 +98,12 @@ export class PokemonComponent implements OnInit, OnDestroy {
     }
 
     setClickableMaleFemale(pokemon: IPokemon) {
-        $(window).ready(function () {
+        $(document).ready(function () {
+            let button = document.getElementById('gender');
             if (pokemon.sprites.front_female == null) {
-                let button = document.getElementById('gender');
                 button.setAttribute('disabled', 'true');
+            } else {
+                button.removeAttribute('disabled');
             }
         });
     }
