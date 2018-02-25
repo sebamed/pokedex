@@ -191,6 +191,7 @@ export class PokemonComponent implements OnInit, OnDestroy {
 
     openNewPokemon(id: number) {
         this._router.navigate(['/pokemon', id]);
+        this.currentTypes = []; // reseting array
         this.ngOnDestroy();
         this.ngOnInit();
     }
