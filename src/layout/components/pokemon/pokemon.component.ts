@@ -6,6 +6,7 @@ import { IPokemon } from '../../../data/interface/pokemon.interface';
 import { IType } from '../../../data/interface/type.interface';
 import { TypesModalComponent } from '../../modals/type/type-modal.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Type } from '../../../data/models/type.model';
 
 declare var $: any;
 
@@ -20,12 +21,18 @@ export class PokemonComponent implements OnInit, OnDestroy {
     // subscriptions
     subRouterParams: Subscription;
     subPokemon: Subscription;
+    subRecentPokemon: Subscription;
+    subPokemonTypes: Subscription;
 
     // current
     currentPokemon: IPokemon;
     currentID: number;
     currentMaleFemaleText: string = 'male';
     currentRotation: boolean = false;
+    currentTypes: Type[] = [];
+
+    // types
+    pokemonTypes: Type[];
 
     // searched
     searchedPokemon: IPokemon[];
@@ -47,10 +54,28 @@ export class PokemonComponent implements OnInit, OnDestroy {
         this.addToSearchedPokemon();
         this.subRouterParams.unsubscribe();
         this.subPokemon.unsubscribe();
+        this.subRecentPokemon.unsubscribe();
+    }
+
+    setCurrentType() {
+        this.subPokemonTypes = this._pokemon.getTypes().subscribe(res => {
+            this.pokemonTypes = res;
+        }, error => console.log(error),
+            () => {
+                for(let i = 0; i < this.pokemonTypes.length; i++){
+                    for(let j = 0; j < this.currentPokemon.types.length; j++){
+                        if(this.pokemonTypes[i].name === this.currentPokemon.types[j].type.name){
+                            this.currentTypes.push(this.pokemonTypes[i]);
+                            console.log('postoji');
+                            console.log(this.pokemonTypes[i].name);
+                        }
+                    }
+                }
+            });
     }
 
     setSearchedPokemon() {
-        this._pokemon.getSearchedPokemon().subscribe(res => {
+        this.subRecentPokemon = this._pokemon.getSearchedPokemon().subscribe(res => {
             this.searchedPokemon = res;
         },
             error => console.log(error),
@@ -80,6 +105,7 @@ export class PokemonComponent implements OnInit, OnDestroy {
             error => console.log(error),
             () => {
                 this.setClickableMaleFemale(this.currentPokemon);
+                this.setCurrentType();
             });
     }
 

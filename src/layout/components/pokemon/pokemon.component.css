@@ -66,11 +66,14 @@ button:disabled {
 
 ul {
     padding: 0;
-    margin: 20px 0 0 0;
 }
 
-.info-key {
-    margin-bottom: 25px;
+.info-key, p {
+    color: #727272;
+}
+
+.separate {
+    margin: 0 20px;
 }
 
 .recently-searched {
@@ -160,4 +163,9 @@ ul {
 
 .recent-pokemon img {
     width: 150px;
+}
+
+.type {
+    display: inline-block;
+    margin: 5px;
 }

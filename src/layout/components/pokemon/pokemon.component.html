@@ -18,13 +18,25 @@
                 <span>Types:</span>
                 <li class="{{type.type.name}} type" *ngFor="let type of currentPokemon.types" (click)="openTypesModal(type.type.name)">{{type.type.name}}</li>
             </ul>
-            <br />
-            <p class="info-key">Weight:
+            <span class="info-key">Weight:
                 <b>{{ currentPokemon.weight | number:'1.0' }}kg</b>
-            </p>
-            <p class="info-key">Height:
+            </span>
+            <span class="separate">|</span>
+            <span class="info-key">Height:
                 <b>{{ currentPokemon.height | number:'1.0' }}cm</b>
-            </p>
+            </span>
+            <ul class="types">
+                <span>Double damage to:</span>
+                <li *ngFor="let type of currentTypes">
+                    <div class="{{double_to.name}} type" *ngFor="let double_to of type.damage_relations.half_damage_to" (click)="openTypesModal(double_to.name)">{{double_to.name}}</div>
+                </li>
+            </ul>
+            <ul class="types">
+                <span>Double damage from:</span>
+                <li *ngFor="let type of currentTypes">
+                    <div class="{{double_from.name}} type" *ngFor="let double_from of type.damage_relations.half_damage_from" (click)="openTypesModal(double_from.name)">{{double_from.name}}</div>
+                </li>
+            </ul>
         </div>
     </div>
     <br />
