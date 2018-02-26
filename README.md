@@ -5,6 +5,8 @@
 # Demo
 Demo will be uploaded soon!
 
+# Description
+Pokedex interactive frontend app built in Angular 5 with Bootstrap 4.0.0
 
 # Pokedex
 
