@@ -5,11 +5,13 @@ import { RouterModule } from '@angular/router';
 import { MenuComponent } from "../layout/components/menu/menu.component";
 import { PokemonListComponent } from "../layout/components/pokemon-list/pokemon-list.component";
 import { PokemonComponent } from "../layout/components/pokemon/pokemon.component";
+import { MyPokedexComponent } from "../layout/components/my-pokedex/my-pokedex.component";
 
 
 export const routes: Routes = [
-   { path: '', component: PokemonListComponent },
-   { path: 'pokemon/:id', component: PokemonComponent }
+    { path: '', component: PokemonListComponent },
+    { path: 'pokemon/:id', component: PokemonComponent },
+    { path: 'mypokedex', component: MyPokedexComponent }
 ];
 
 export const Routing: ModuleWithProviders = RouterModule.forRoot(routes);
