@@ -23,6 +23,7 @@ export class PokemonComponent implements OnInit, OnDestroy {
     subPokemon: Subscription;
     subRecentPokemon: Subscription;
     subPokemonTypes: Subscription;
+    subUrlParams: Subscription;
 
     // current
     currentPokemon: IPokemon;
@@ -30,6 +31,9 @@ export class PokemonComponent implements OnInit, OnDestroy {
     currentMaleFemaleText: string = 'male';
     currentRotation: boolean = false;
     currentTypes: Type[] = [];
+
+    // pokemon list 
+    pokemonCount: number;
 
     // types
     pokemonTypes: Type[];
@@ -51,10 +55,15 @@ export class PokemonComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.addToSearchedPokemon();
-        this.subRouterParams.unsubscribe();
-        this.subPokemon.unsubscribe();
-        this.subRecentPokemon.unsubscribe();
+        try {
+            this.addToSearchedPokemon();
+            this.subRouterParams.unsubscribe();
+            this.subPokemon.unsubscribe();
+            this.subRecentPokemon.unsubscribe();
+            this.subUrlParams.unsubscribe();
+        } catch {
+            console.log("something is still subscribed");
+        }
     }
 
     setCurrentType() {
@@ -62,9 +71,9 @@ export class PokemonComponent implements OnInit, OnDestroy {
             this.pokemonTypes = res;
         }, error => console.log(error),
             () => {
-                for(let i = 0; i < this.pokemonTypes.length; i++){
-                    for(let j = 0; j < this.currentPokemon.types.length; j++){
-                        if(this.pokemonTypes[i].name === this.currentPokemon.types[j].type.name){
+                for (let i = 0; i < this.pokemonTypes.length; i++) {
+                    for (let j = 0; j < this.currentPokemon.types.length; j++) {
+                        if (this.pokemonTypes[i].name === this.currentPokemon.types[j].type.name) {
                             this.currentTypes.push(this.pokemonTypes[i]);
                             console.log('postoji');
                             console.log(this.pokemonTypes[i].name);
@@ -97,8 +106,19 @@ export class PokemonComponent implements OnInit, OnDestroy {
         });
     }
 
+
+    checkUrl() {
+        if (Number(this.currentID) > this.pokemonCount || isNaN(this.currentID)) {
+            console.log("nije url dobar");
+            this._router.navigateByUrl('error');
+            this.ngOnDestroy();
+        }
+    }
+
     setCurrentPokemon() {
         this.subPokemon = this._pokemon.getPokemons().subscribe(res => {
+            this.pokemonCount = res.length;
+            this.checkUrl();
             this.currentPokemon = res[this.currentID - 1];
             console.log(this.currentPokemon);
         },
