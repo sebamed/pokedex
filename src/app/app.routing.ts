@@ -9,9 +9,10 @@ import { MyPokedexComponent } from "../layout/components/my-pokedex/my-pokedex.c
 
 
 export const routes: Routes = [
-    { path: '', component: PokemonListComponent },
+    { path: '', component: PokemonListComponent, pathMatch: 'full' },
     { path: 'pokemon/:id', component: PokemonComponent },
-    { path: 'mypokedex', component: MyPokedexComponent }
+    { path: 'mypokedex', component: MyPokedexComponent },
+    { path: '**', component: MyPokedexComponent }
 ];
 
 export const Routing: ModuleWithProviders = RouterModule.forRoot(routes);

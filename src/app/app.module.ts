@@ -7,6 +7,9 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+// Animation modules
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 // Pipes 
 import { CapitalizeLettersPipe } from '../pipes/capitalize-letters.pipe';
 import { FilterPipe } from '../pipes/filter.pipe';
@@ -34,7 +37,7 @@ import { TypesModalComponent } from '../layout/modals/type/type-modal.component'
     PokemonListComponent,
     PokemonComponent,
     TypesModalComponent,
-    MyPokedexComponent   
+    MyPokedexComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { TypesModalComponent } from '../layout/modals/type/type-modal.component'
     RouterModule,
     HttpModule,
     FormsModule,
+    BrowserAnimationsModule,
     Routing
   ],
   providers: [PokemonService],
