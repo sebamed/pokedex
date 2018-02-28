@@ -1,12 +1,48 @@
 import { Component } from '@angular/core';
 import { OnInit, OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
+import { trigger, state, style, animate, transition, query } from '@angular/animations';
 
 declare var $: any;
 
 @Component({
     selector: 'app-menu',
     templateUrl: './menu.component.html',
-    styleUrls: ['./menu.component.css']
+    styleUrls: ['./menu.component.css'],
+    animations: [
+        trigger('routerAnimation', [
+            transition('* <=> *', [
+                // Initial state of new route
+                query(':enter',
+                    style({
+                        position: 'fixed',
+                        width: '100%',
+                        transform: 'translateX(-100%)'
+                    }),
+                    { optional: true }),
+
+                // move page off screen right on leave
+                query(':leave',
+                    animate('400ms ease-in',
+                        style({
+                            position: 'fixed',
+                            width: '100%',
+                            opacity: 0
+                        })
+                    ),
+                    { optional: true }),
+
+                // move page in screen from left to right
+                query(':enter',
+                    animate('700ms ease-in',
+                        style({
+                            opacity: 1,
+                            transform: 'translateX(0%)'
+                        })
+                    ),
+                    { optional: true }),
+            ])
+        ])
+    ]
 })
 export class MenuComponent implements OnInit, OnDestroy {
 
@@ -31,4 +67,9 @@ export class MenuComponent implements OnInit, OnDestroy {
     _toggleSidebar() {
         this._opened = !this._opened;
     }
+
+      // change the animation state
+  getRouteAnimation(outlet) {
+    return outlet.activatedRouteData.animation
+  }
 }

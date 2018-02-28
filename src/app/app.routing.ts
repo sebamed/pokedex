@@ -9,9 +9,9 @@ import { MyPokedexComponent } from "../layout/components/my-pokedex/my-pokedex.c
 
 
 export const routes: Routes = [
-    { path: '', component: PokemonListComponent, pathMatch: 'full' },
-    { path: 'pokemon/:id', component: PokemonComponent },
-    { path: 'mypokedex', component: MyPokedexComponent },
+    { path: '', component: PokemonListComponent, pathMatch: 'full',  data: { animation: 'home'} },
+    { path: 'pokemon/:id', component: PokemonComponent, data: { animation: 'pokemon'} },
+    { path: 'mypokedex', component: MyPokedexComponent, data: { animation: 'my-pokedex'} },
     { path: '**', component: MyPokedexComponent }
 ];
 

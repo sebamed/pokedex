@@ -35,6 +35,8 @@
             </div>
         </div>
         <div class="separator"></div>
-        <router-outlet></router-outlet>
+        <div [@routerAnimation]="getRouteAnimation(route)">
+            <router-outlet #route="outlet"></router-outlet>
+        </div>
     </div>
 </ng-sidebar-container>
