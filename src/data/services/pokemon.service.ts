@@ -13,6 +13,8 @@ export class PokemonService {
 
     searchedPokemon: IPokemon[] = [];
 
+    myPokemon: IPokemon[] = [];
+
     constructor(private _http: Http) {
 
     }
@@ -28,6 +30,20 @@ export class PokemonService {
             this.searchedPokemon.shift();
         }
         this.searchedPokemon.push(pokemon);
+    }
+
+    addMyPokemon(pokemon: IPokemon){
+        for(let i = 0; i < this.myPokemon.length; i++){
+            if(pokemon.id == this.myPokemon[i].id){
+                // already exists!
+                return;
+            }
+        }
+        this.myPokemon.push(pokemon);
+    }
+
+    getMyPokemon(){
+        return Observable.of(this.myPokemon);
     }
 
     getSearchedPokemon() {

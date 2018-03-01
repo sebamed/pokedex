@@ -48,4 +48,10 @@ export class PokemonListComponent implements OnInit, OnDestroy {
         const typesModalRef = this._modal.open(TypesModalComponent);
         typesModalRef.componentInstance.type = type;
     }
+
+    addMyPokemon(pokemon: IPokemon){
+        this._pokemon.addMyPokemon(pokemon);
+        console.log('dodat:');
+        console.log(pokemon);
+    }
 }

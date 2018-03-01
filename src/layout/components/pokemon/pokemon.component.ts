@@ -13,8 +13,7 @@ declare var $: any;
 @Component({
     selector: 'app-pokemon',
     templateUrl: './pokemon.component.html',
-    styleUrls: ['../pokemon-list/pokemon-list.component.css',
-        './pokemon.component.css']
+    styleUrls: ['./pokemon.component.css']
 })
 export class PokemonComponent implements OnInit, OnDestroy {
 
@@ -214,5 +213,9 @@ export class PokemonComponent implements OnInit, OnDestroy {
         this.currentTypes = []; // reseting array
         this.ngOnDestroy();
         this.ngOnInit();
+    }
+
+    addMyPokemon(pokemon: IPokemon){
+        this._pokemon.addMyPokemon(pokemon);
     }
 }

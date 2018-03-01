@@ -1,17 +1,41 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { PokemonService } from '../../../data/services/pokemon.service';
+import { Subscription } from 'rxjs/Subscription';
+import { IPokemon } from '../../../data/interface/pokemon.interface';
 
 @Component({
     selector: 'app-my-pokedex',
     templateUrl: './my-pokedex.component.html',
-    styleUrls: ['./my-pokedex.component.css']
+    styleUrls: ['../pokemon-list/pokemon-list.component.css',
+        './my-pokedex.component.css']
 })
 export class MyPokedexComponent implements OnInit, OnDestroy {
-    
-    ngOnInit() {
+
+    // subscriptions
+    subMyPokemon: Subscription;
+
+
+    // my pokemon
+    myPokemon: IPokemon[];
+
+    constructor(private _pokemon: PokemonService) {
 
     }
 
-    ngOnDestroy(){
+    ngOnInit() {
+        this.setMyPokemon();
+    }
 
+    ngOnDestroy() {
+        this.subMyPokemon.unsubscribe();
+    }
+
+    setMyPokemon() {
+        this.subMyPokemon = this._pokemon.getMyPokemon().subscribe(res => {
+            this.myPokemon = res;
+        }, error => console.log(error),
+            () => {
+                console.log(this.myPokemon);
+            });
     }
 }

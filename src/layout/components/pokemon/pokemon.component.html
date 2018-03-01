@@ -11,6 +11,9 @@
                     <i *ngIf="!currentRotation" class="fa fa-rotate-right"></i>
                     <i *ngIf="currentRotation" class="fa fa-rotate-left"></i>
                 </button>
+                <button id="catch" class="catch" (click)="addMyPokemon(currentPokemon)">
+                    <i class="fa fa-plus"></i>
+                </button>
             </div>
         </div>
         <div class="col-md-6 pokemon-info">

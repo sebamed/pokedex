@@ -5,7 +5,7 @@
         </div>
         <div class="content">
             <div *ngIf="pokemonList">
-                <div class="card" *ngFor="let pokemon of pokemonList | filter : searchText" [routerLink]="['/pokemon', pokemon.id]">
+                <div class="card" *ngFor="let pokemon of pokemonList | filter : searchText">
                     <div class="card-top-bg">
                         <div class="card-header">
                             <h4>{{pokemon.name | capitalizeLetters:'01' }}</h4>
@@ -25,11 +25,11 @@
                         </div>
                         <div class="card-icons">
                             <ul class="icons-list">
-                                <li>
-                                    <i class="fa fa-leaf"></i>
+                                <li (click)="addMyPokemon(pokemon)">
+                                    ADD
                                 </li>
-                                <li>
-                                    <i class="fa fa-leaf"></i>
+                                <li [routerLink]="['/pokemon', pokemon.id]">
+                                    P
                                 </li>
                                 <li>
                                     <i class="fa fa-leaf"></i>

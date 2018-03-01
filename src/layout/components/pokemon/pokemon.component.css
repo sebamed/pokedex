@@ -46,6 +46,10 @@ button:disabled {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+.catch {
+    background: rgb(206, 233, 108);
+}
+
 .male {
     background: rgb(120, 192, 252);
 }
