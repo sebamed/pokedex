@@ -22,7 +22,6 @@ export class PokemonService {
     addSearchedPokemon(pokemon: IPokemon) {
         for(let i = 0; i < this.searchedPokemon.length; i++){
             if(pokemon.id == this.searchedPokemon[i].id){
-                console.log('jeste jednak');
                 return;
             }
         }
