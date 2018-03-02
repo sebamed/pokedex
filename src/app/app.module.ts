@@ -19,12 +19,14 @@ import { Routing } from './app.routing';
 
 // Services
 import { PokemonService } from '../data/services/pokemon.service';
+import { MessagesService } from '../data/services/messages.service';
 
 // Components
 import { MenuComponent } from '../layout/components/menu/menu.component';
 import { PokemonListComponent } from '../layout/components/pokemon-list/pokemon-list.component';
 import { PokemonComponent } from '../layout/components/pokemon/pokemon.component';
 import { MyPokedexComponent } from '../layout/components/my-pokedex/my-pokedex.component';
+import { MessagesComponent } from '../layout/components/messages/messages.component';
 
 // Modals 
 import { TypesModalComponent } from '../layout/modals/type/type-modal.component';
@@ -37,7 +39,8 @@ import { TypesModalComponent } from '../layout/modals/type/type-modal.component'
     PokemonListComponent,
     PokemonComponent,
     TypesModalComponent,
-    MyPokedexComponent
+    MyPokedexComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,7 @@ import { TypesModalComponent } from '../layout/modals/type/type-modal.component'
     BrowserAnimationsModule,
     Routing
   ],
-  providers: [PokemonService],
+  providers: [PokemonService, MessagesService],
   bootstrap: [MenuComponent],
   entryComponents: [TypesModalComponent]
 })

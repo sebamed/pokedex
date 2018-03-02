@@ -7,7 +7,7 @@
             <div *ngIf="pokemonList">
                 <div class="card" *ngFor="let pokemon of pokemonList | filter : searchText">
                     <div class="card-top-bg">
-                        <div class="card-header">
+                        <div class="card-header" (click)="addMsg('test')">
                             <h4>{{pokemon.name | capitalizeLetters:'01' }}</h4>
                             <div class="card-img unselectable">
                                 <img src="{{ pokemon.sprites.front_default }}" alt="" />

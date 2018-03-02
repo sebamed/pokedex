@@ -33,7 +33,7 @@ declare var $: any;
 
                 // move page in screen from left to right
                 query(':enter',
-                    animate('700ms ease-in',
+                    animate('400ms ease-in',
                         style({
                             opacity: 1,
                             transform: 'translateX(0%)'

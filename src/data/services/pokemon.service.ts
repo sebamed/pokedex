@@ -35,10 +35,11 @@ export class PokemonService {
         for(let i = 0; i < this.myPokemon.length; i++){
             if(pokemon.id == this.myPokemon[i].id){
                 // already exists!
-                return;
+                return false;
             }
         }
         this.myPokemon.push(pokemon);
+        return true;
     }
 
     getMyPokemon(){

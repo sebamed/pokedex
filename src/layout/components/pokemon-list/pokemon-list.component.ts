@@ -5,6 +5,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TypesModalComponent } from '../../modals/type/type-modal.component';
 import { IType } from '../../../data/interface/type.interface';
 import { Subscription } from 'rxjs/Subscription';
+import { MessagesService } from '../../../data/services/messages.service';
 
 @Component({
     selector: 'app-poke-list',
@@ -21,7 +22,7 @@ export class PokemonListComponent implements OnInit, OnDestroy {
     subSetPokemon: Subscription;
 
     constructor(private _pokemon: PokemonService,
-        private _modal: NgbModal) {
+        private _modal: NgbModal, private _message: MessagesService) {
     }
 
     ngOnInit() {
@@ -40,7 +41,7 @@ export class PokemonListComponent implements OnInit, OnDestroy {
         },
             error => console.log(error),
             () => {
-                
+
             });
     }
 
@@ -49,9 +50,18 @@ export class PokemonListComponent implements OnInit, OnDestroy {
         typesModalRef.componentInstance.type = type;
     }
 
-    addMyPokemon(pokemon: IPokemon){
-        this._pokemon.addMyPokemon(pokemon);
-        console.log('dodat:');
+    addMyPokemon(pokemon: IPokemon) {
+        if (this._pokemon.addMyPokemon(pokemon)) {
+            this._message.addMessage({
+                message: '' + pokemon.name + ' added to my pokedex!',
+                type: 'success'
+            })
+        } else {
+            this._message.addMessage({
+                message: '' + pokemon.name + 'is already in your pokedex!',
+                type: 'error'
+            });
+        }
         console.log(pokemon);
     }
 }
