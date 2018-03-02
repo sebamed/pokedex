@@ -1,7 +1,7 @@
-<div class="messages" *ngIf="messagesList.length > 0">
+<div [@flyInOut]="'in'" class="messages" *ngIf="messagesList.length > 0">
     <ul>
         <li [@flyInOut]="'in'" *ngFor="let msg of messagesList" class="{{msg.type}} unselectable" (click)="removeMessage(msg)">
             {{msg.message | capitalizeLetters:'01'}}
         </li>
     </ul>
-</div>
+    </div>
