@@ -7,10 +7,33 @@ import { IType } from '../../../data/interface/type.interface';
 import { Subscription } from 'rxjs/Subscription';
 import { MessagesService } from '../../../data/services/messages.service';
 
+// animations
+import { trigger, state, style, animate, transition, query, keyframes } from '@angular/animations';
+
+
 @Component({
     selector: 'app-poke-list',
     templateUrl: './pokemon-list.component.html',
-    styleUrls: ['./pokemon-list.component.css']
+    styleUrls: ['./pokemon-list.component.css'],
+    animations: [
+        trigger('reveal', [
+            state('in', style({ opacity: 1 })),
+            transition('void => *', [
+                animate(300, keyframes([
+                    style({ opacity: 0,  offset: 0 }),
+                    style({ opacity: .5, offset: 0.3 }),
+                    style({ opacity: 1, offset: 1.0 })
+                ]))
+            ]),
+            transition('* => void', [
+                animate(300, keyframes([
+                    style({ opacity: 1, offset: 0 }),
+                    style({ opacity: .5,  offset: 0.7 }),
+                    style({ opacity: 0, offset: 1.0 })
+                ]))
+            ])
+        ])
+    ]
 })
 export class PokemonListComponent implements OnInit, OnDestroy {
 
