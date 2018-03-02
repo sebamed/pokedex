@@ -34,4 +34,8 @@ export class MessagesComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
         this.subMessagesList.unsubscribe();
     }
+
+    removeMessage(msg: IMessage){
+        this._messages.deleteMessage(msg);
+    }
 }

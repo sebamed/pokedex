@@ -28,14 +28,23 @@ export class MessagesService {
     addMessage(msg: IMessage){
         this.messagesList.push(msg);
         this.messagesListUpdated.emit(this.messagesList);
-        this.removeMessage();
+        if(this.messagesList.indexOf(msg) > -1){
+            this.removeMessage();
+        } else {
+            this.subTimerRemoveMsg.unsubscribe();
+        }
     }
 
     removeMessage(){
-        this.oTimer = Observable.timer(3000); // change if needed (time before message disapears)
+        this.oTimer = Observable.timer(5000); // change if needed (time before message disapears)
         this.subTimerRemoveMsg = this.oTimer.subscribe(() => {
             this.messagesList.shift();
             this.messagesListUpdated.emit(this.messagesList);
-        })
+        });
+    }
+
+    deleteMessage(msg: IMessage){
+        this.messagesList.splice(this.messagesList.indexOf(msg), 1);
+        this.messagesListUpdated.emit(this.messagesList);
     }
 }
