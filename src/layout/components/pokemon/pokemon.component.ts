@@ -7,6 +7,7 @@ import { IType } from '../../../data/interface/type.interface';
 import { TypesModalComponent } from '../../modals/type/type-modal.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Type } from '../../../data/models/type.model';
+import { MessagesService } from '../../../data/services/messages.service';
 
 declare var $: any;
 
@@ -43,7 +44,8 @@ export class PokemonComponent implements OnInit, OnDestroy {
     constructor(private _route: ActivatedRoute,
         private _pokemon: PokemonService,
         private _modal: NgbModal,
-        private _router: Router) {
+        private _router: Router,
+        private _message: MessagesService) {
 
     }
 
@@ -157,11 +159,19 @@ export class PokemonComponent implements OnInit, OnDestroy {
         if (this.currentMaleFemaleText === 'male') {
             document.getElementById('pokemon-image').setAttribute('src', this.currentPokemon.sprites.front_default);
             this.currentRotation = false;
+            this._message.addMessage({
+                message: 'Female version of ' + this.currentPokemon.name + ' is selected',
+                type: 'info'
+            });
             return;
         }
         else if (this.currentMaleFemaleText === 'female') {
             document.getElementById('pokemon-image').setAttribute('src', this.currentPokemon.sprites.front_female);
             this.currentRotation = false;
+            this._message.addMessage({
+                message: 'Male version of ' + this.currentPokemon.name + ' is selected',
+                type: 'info'
+            });
             return;
         }
     }
@@ -171,24 +181,24 @@ export class PokemonComponent implements OnInit, OnDestroy {
             if (this.currentRotation) {
                 document.getElementById('pokemon-image').setAttribute('src', this.currentPokemon.sprites.front_default);
                 this.toggleRotation();
-                return;
             } else {
                 document.getElementById('pokemon-image').setAttribute('src', this.currentPokemon.sprites.back_default);
                 this.toggleRotation();
-                return;
             }
         }
         else if (this.currentMaleFemaleText === 'female') {
             if (this.currentRotation) {
                 document.getElementById('pokemon-image').setAttribute('src', this.currentPokemon.sprites.front_female);
                 this.toggleRotation();
-                return;
             } else {
                 document.getElementById('pokemon-image').setAttribute('src', this.currentPokemon.sprites.back_female);
                 this.toggleRotation();
-                return;
             }
         }
+        this._message.addMessage({
+            message: 'Pokemon rotated!',
+            type: 'info'
+        });
     }
 
     toggleRotation() {
@@ -215,7 +225,7 @@ export class PokemonComponent implements OnInit, OnDestroy {
         this.ngOnInit();
     }
 
-    addMyPokemon(pokemon: IPokemon){
+    addMyPokemon(pokemon: IPokemon) {
         this._pokemon.addMyPokemon(pokemon);
     }
 }

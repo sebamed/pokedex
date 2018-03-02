@@ -19,6 +19,7 @@
     -webkit-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
+    text-align: center;
 }
 
 .messages ul li:hover {
@@ -35,4 +36,10 @@
     background-color: rgb(206, 233, 108);
     border-color: rgb(108, 158, 33) !important;
     color: rgb(108, 158, 33);
+}
+
+.info {
+    background-color: rgb(97, 198, 223);
+    border-color: rgb(40, 141, 189) !important;
+    color: rgb(40, 141, 189);
 }

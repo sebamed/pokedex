@@ -7,6 +7,7 @@ import 'rxjs/add/observable/of';
 // interfaces
 import { IPokemon } from '../interface/pokemon.interface'
 import { Type } from '../models/type.model';
+import { MessagesService } from './messages.service';
 
 @Injectable()
 export class PokemonService {
@@ -15,7 +16,7 @@ export class PokemonService {
 
     myPokemon: IPokemon[] = [];
 
-    constructor(private _http: Http) {
+    constructor(private _http: Http, private _message: MessagesService) {
 
     }
 
@@ -35,11 +36,18 @@ export class PokemonService {
         for(let i = 0; i < this.myPokemon.length; i++){
             if(pokemon.id == this.myPokemon[i].id){
                 // already exists!
-                return false;
+                this._message.addMessage({
+                    message: pokemon.name + ' is already in your pokedex!',
+                    type: 'error'
+                });
+                return;
             }
         }
         this.myPokemon.push(pokemon);
-        return true;
+        this._message.addMessage({
+            message: pokemon.name + ' is added to your pokedex!',
+            type: 'success'
+        });
     }
 
     getMyPokemon(){

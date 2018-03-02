@@ -74,17 +74,7 @@ export class PokemonListComponent implements OnInit, OnDestroy {
     }
 
     addMyPokemon(pokemon: IPokemon) {
-        if (this._pokemon.addMyPokemon(pokemon)) {
-            this._message.addMessage({
-                message: '' + pokemon.name + ' added to my pokedex!',
-                type: 'success'
-            })
-        } else {
-            this._message.addMessage({
-                message: '' + pokemon.name + 'is already in your pokedex!',
-                type: 'error'
-            });
-        }
+        this._pokemon.addMyPokemon(pokemon);
         console.log(pokemon);
     }
 }
