@@ -9,6 +9,9 @@ import { IPokemon } from '../interface/pokemon.interface'
 import { Type } from '../models/type.model';
 import { MessagesService } from './messages.service';
 
+// enumerator
+import { MessageType } from '../enum/message-type.enum';
+
 @Injectable()
 export class PokemonService {
 
@@ -38,7 +41,7 @@ export class PokemonService {
                 // already exists!
                 this._message.addMessage({
                     message: pokemon.name + ' is already in your pokedex!',
-                    type: 'error'
+                    type: MessageType.error
                 });
                 return;
             }
@@ -46,7 +49,7 @@ export class PokemonService {
         this.myPokemon.push(pokemon);
         this._message.addMessage({
             message: pokemon.name + ' is added to your pokedex!',
-            type: 'success'
+            type: MessageType.success
         });
     }
 

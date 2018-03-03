@@ -9,6 +9,9 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Type } from '../../../data/models/type.model';
 import { MessagesService } from '../../../data/services/messages.service';
 
+// enumerator
+import { MessageType } from '../../../data/enum/message-type.enum';
+
 declare var $: any;
 
 @Component({
@@ -161,7 +164,7 @@ export class PokemonComponent implements OnInit, OnDestroy {
             this.currentRotation = false;
             this._message.addMessage({
                 message: 'Female version of ' + this.currentPokemon.name + ' is selected',
-                type: 'info'
+                type: MessageType.info
             });
             return;
         }
@@ -170,7 +173,7 @@ export class PokemonComponent implements OnInit, OnDestroy {
             this.currentRotation = false;
             this._message.addMessage({
                 message: 'Male version of ' + this.currentPokemon.name + ' is selected',
-                type: 'info'
+                type: MessageType.info
             });
             return;
         }
@@ -197,7 +200,7 @@ export class PokemonComponent implements OnInit, OnDestroy {
         }
         this._message.addMessage({
             message: 'Pokemon rotated!',
-            type: 'info'
+            type: MessageType.info
         });
     }
 
