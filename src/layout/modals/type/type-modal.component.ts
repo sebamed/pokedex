@@ -6,10 +6,32 @@ import { PokemonService } from '../../../data/services/pokemon.service';
 import { Type } from '../../../data/models/type.model';
 import { Subscription } from 'rxjs/Subscription';
 
+// animations
+import { trigger, state, style, animate, transition, query, keyframes } from '@angular/animations';
+
 @Component({
     selector: 'modal-types',
     templateUrl: './type-modal.component.html',
-    styleUrls: ['./type-modal.component.css']
+    styleUrls: ['./type-modal.component.css'],
+    animations: [
+        trigger('flyInOut', [
+            state('in', style({ transform: 'translateX(0)' })),
+            transition('void => *', [
+                animate(300, keyframes([
+                    style({ opacity: 0, transform: 'translateX(-100%)', offset: 0 }),
+                    style({ opacity: 1, transform: 'translateX(15px)', offset: 0.3 }),
+                    style({ opacity: 1, transform: 'translateX(0)', offset: 1.0 })
+                ]))
+            ]),
+            transition('* => void', [
+                animate(300, keyframes([
+                    style({ opacity: 1, transform: 'translateX(0)', offset: 0 }),
+                    style({ opacity: 1, transform: 'translateX(-15px)', offset: 0.7 }),
+                    style({ opacity: 0, transform: 'translateX(100%)', offset: 1.0 })
+                ]))
+            ])
+        ])
+    ]
 })
 export class TypesModalComponent implements OnInit, OnDestroy {
     @Input() type: IType;

@@ -1,4 +1,4 @@
-<div id="types-modal" ngDefaultControl [(ngModel)]="type.type.name">
+<div [@flyInOut]="'in'" id="types-modal" ngDefaultControl [(ngModel)]="type.type.name">
     <div class="{{type.type.name}} modal-header">
         <h4 class="modal-title">{{ type.type.name | capitalizeLetters:'01' }} type Pokemon</h4>
         <a (click)="activeModal.dismiss('Cross click')">
