@@ -1,6 +1,20 @@
 <div class="separator"></div>
 <div class="container" ngDefaultControl [(ngModel)]="currentPokemon" *ngIf="currentPokemon">
     <div class="row">
+        <div class="col-md-6 title">
+            <div class="back-button">
+                <button (click)="goBack()">
+                    <i class="fa fa-caret-left"></i>
+                </button>
+            </div>
+            <div class="pokemon-title">
+                <h4>
+                    {{currentPokemon.name | capitalizeLetters:'01'}}
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-6 pokemon-image">
             <img id="pokemon-image" class="responsive" src="{{currentPokemon.sprites.front_default}}" alt="">
             <div class="buttons">

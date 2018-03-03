@@ -8,7 +8,6 @@
 
 .content {
     background-color: #335c99;
-
 }
 
 .poke-row {
@@ -17,4 +16,44 @@
 
 .placeholder {
     padding: 0 170px;
+}
+
+.pokedex-counter {
+    background-color: #213861;
+    padding: 10px 30px;
+    margin-right: 60px;
+    position: relative;
+}
+
+.pokedex-title {
+    background-color: #213861;
+    padding: 10px 30px;
+    display: inline-block;
+    margin-left: 60px;
+    position: relative;
+}
+
+.pokedex-title p {
+    color: #fff;
+    margin: 0;
+}
+
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 43px solid transparent;
+    border-right: 43px solid transparent;
+    border-bottom: 43px solid #213861;
+}
+
+.arrow-first {
+    position: absolute;
+    left: -43.5px;
+    bottom: 0;
+}
+
+.arrow-second {
+    position: absolute;
+    left: 106px;
+    bottom: 0;
 }

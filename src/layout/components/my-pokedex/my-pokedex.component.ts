@@ -34,6 +34,7 @@ export class MyPokedexComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         this.subMyPokemon.unsubscribe();
+        this.subMyPokemonUpdated.unsubscribe();
     }
 
     setMyPokemon() {

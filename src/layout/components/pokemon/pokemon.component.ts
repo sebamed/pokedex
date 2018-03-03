@@ -11,6 +11,7 @@ import { MessagesService } from '../../../data/services/messages.service';
 
 // enumerator
 import { MessageType } from '../../../data/enum/message-type.enum';
+import { Location } from '@angular/common';
 
 declare var $: any;
 
@@ -48,7 +49,8 @@ export class PokemonComponent implements OnInit, OnDestroy {
         private _pokemon: PokemonService,
         private _modal: NgbModal,
         private _router: Router,
-        private _message: MessagesService) {
+        private _message: MessagesService,
+        private _location: Location) {
 
     }
 
@@ -68,6 +70,10 @@ export class PokemonComponent implements OnInit, OnDestroy {
         } catch {
             console.log("something is still subscribed");
         }
+    }
+
+    goBack(){
+        this._location.back();
     }
 
     setCurrentType() {

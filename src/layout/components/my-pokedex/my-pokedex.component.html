@@ -1,43 +1,50 @@
 <div id="pokemon-list">
-        <div class="poke-row">
-            <div class="content">
-                <div *ngIf="myPokemon.length != 0">
-                    <div class="card" *ngFor="let pokemon of myPokemon">
-                        <div class="card-top-bg">
-                            <div class="card-header">
-                                <h4>{{pokemon.name | capitalizeLetters:'01' }}</h4>
-                                <div class="card-img">
-                                    <img src="{{ pokemon.sprites.front_default }}" alt="" />
-                                </div>
-                                <div class="card-types">
-                                    <ul>
-                                        <li *ngFor="let type of pokemon.types" class="{{ type.type.name }}" (click)="openTypesModal(type)">{{ type.type.name }}</li>
-                                    </ul>
-                                </div>
+    <div class="poke-row">
+        <div class="pokedex-title">
+            <div class="arrow-up arrow-first"></div>
+            <p class="unselectable">
+                My Pokedex
+            </p>
+            <div class="arrow-up arrow-second"></div>
+        </div>
+        <div class="content">
+            <div *ngIf="myPokemon.length != 0">
+                <div class="card" *ngFor="let pokemon of myPokemon">
+                    <div class="card-top-bg">
+                        <div class="card-header">
+                            <h4>{{pokemon.name | capitalizeLetters:'01' }}</h4>
+                            <div class="card-img">
+                                <img src="{{ pokemon.sprites.front_default }}" alt="" />
                             </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="placeholder">
-                                
-                            </div>
-                            <div class="card-icons">
-                                <ul class="icons-list">
-                                    <li (click)="removeMyPokemon(pokemon)">
-                                        <img src="/assets/svg/pokeball-active.svg" alt="" placement="bottom" ngbTooltip="Release me!">
-                                    </li>
-                                    <li [routerLink]="['/pokemon', pokemon.id]">
-                                        <img src="/assets/svg/eye-icon.svg" alt="" placement="bottom" ngbTooltip="Check me out!">
-                                    </li>
+                            <div class="card-types">
+                                <ul>
+                                    <li *ngFor="let type of pokemon.types" class="{{ type.type.name }}" (click)="openTypesModal(type)">{{ type.type.name }}</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+                    <div class="card-footer">
+                        <div class="placeholder">
+
+                        </div>
+                        <div class="card-icons">
+                            <ul class="icons-list">
+                                <li (click)="removeMyPokemon(pokemon)">
+                                    <img src="/assets/svg/pokeball-active.svg" alt="" placement="bottom" ngbTooltip="Release me!">
+                                </li>
+                                <li [routerLink]="['/pokemon', pokemon.id]">
+                                    <img src="/assets/svg/eye-icon.svg" alt="" placement="bottom" ngbTooltip="Check me out!">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div *ngIf="myPokemon.length == 0" class="no-pokemon">
-                    <h4>
-                        You have no pokemon in your pokedex!
-                    </h4>
-                </div>
+            </div>
+            <div *ngIf="myPokemon.length == 0" class="no-pokemon">
+                <h4>
+                    You have no pokemon in your pokedex!
+                </h4>
             </div>
         </div>
     </div>
+</div>
