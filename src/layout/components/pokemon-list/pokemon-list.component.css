@@ -5,7 +5,6 @@
 .card {
     display: inline-block;
     margin: 10px 35px;
-    cursor: pointer;
     outline: none;
     -ms-transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
@@ -146,12 +145,29 @@
 }
 
 .icons-list li {
+    text-align: center;
     display: inline;
-    border-radius: 50%;
-    background: #fff;
-    border: 1px solid #fff;
     padding: 10px;
     margin: 0 10px;
+    outline: none;
+}
+
+.icons-list li img {
+    width: 30px;
+    opacity: .7;
+    cursor: pointer;
+    -ms-transition: all .1s ease-in-out;
+    -webkit-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+}
+
+.icons-list li img:hover {
+    opacity: 1;
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .diamond {
@@ -282,3 +298,4 @@ input::placeholder {
 ul {
     padding: 0;
 }
+

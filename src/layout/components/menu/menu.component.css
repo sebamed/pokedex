@@ -32,7 +32,7 @@
     display: inline-block;
     width: 350px;
     height: 150px;
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2000px-International_Pok%C3%A9mon_logo.svg.png');
+    background-image: url('/assets/png/pokemon-logo.png');
     background-repeat: no-repeat;
     background-size: 100%;
     position: relative;

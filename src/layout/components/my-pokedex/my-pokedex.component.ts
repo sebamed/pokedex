@@ -13,7 +13,7 @@ export class MyPokedexComponent implements OnInit, OnDestroy {
 
     // subscriptions
     subMyPokemon: Subscription;
-
+    subMyPokemonUpdated: Subscription;
 
     // my pokemon
     myPokemon: IPokemon[];
@@ -24,6 +24,12 @@ export class MyPokedexComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.setMyPokemon();
+        this.subMyPokemonUpdated = this._pokemon.myPokemonUpdated.subscribe(res => {
+            this.myPokemon = res;
+        }, error => console.log(error),
+            () => {
+
+            })
     }
 
     ngOnDestroy() {
@@ -37,5 +43,9 @@ export class MyPokedexComponent implements OnInit, OnDestroy {
             () => {
                 console.log(this.myPokemon);
             });
+    }
+
+    removeMyPokemon(pokemon: IPokemon) {
+        this._pokemon.removeMyPokemon(pokemon);
     }
 }

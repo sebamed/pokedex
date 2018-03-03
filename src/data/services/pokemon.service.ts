@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -14,6 +14,8 @@ import { MessageType } from '../enum/message-type.enum';
 
 @Injectable()
 export class PokemonService {
+
+    myPokemonUpdated: EventEmitter<any> = new EventEmitter();
 
     searchedPokemon: IPokemon[] = [];
 
@@ -51,6 +53,19 @@ export class PokemonService {
             message: pokemon.name + ' is added to your pokedex!',
             type: MessageType.success
         });
+        this.myPokemonUpdated.emit(this.myPokemon);
+    }
+
+    removeMyPokemon(pokemon: IPokemon){
+        if(this.myPokemon.indexOf(pokemon) > -1){
+            this.myPokemon.splice(this.myPokemon.indexOf(pokemon), 1);
+            console.log('obrisan:');
+            console.log(pokemon);
+            this._message.addMessage({
+                message: pokemon.name + ' is now released!',
+                type: MessageType.success
+            });
+        }
     }
 
     getMyPokemon(){

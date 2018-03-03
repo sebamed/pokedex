@@ -5,3 +5,16 @@
 .no-pokemon h4 {
     color: #8a8a8a;
 }
+
+.content {
+    background-color: #335c99;
+
+}
+
+.poke-row {
+    padding: 5%;
+}
+
+.placeholder {
+    padding: 0 170px;
+}

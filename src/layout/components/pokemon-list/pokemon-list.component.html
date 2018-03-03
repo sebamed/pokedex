@@ -5,7 +5,7 @@
         </div>
         <div class="content">
             <div *ngIf="pokemonList">
-                <div class="card" [@reveal]="'in'"  *ngFor="let pokemon of pokemonList | filter : searchText">
+                <div class="card" [@reveal]="'in'" *ngFor="let pokemon of pokemonList | filter : searchText">
                     <div class="card-top-bg">
                         <div class="card-header" (click)="addMsg('test')">
                             <h4>{{pokemon.name | capitalizeLetters:'01' }}</h4>
@@ -26,13 +26,10 @@
                         <div class="card-icons">
                             <ul class="icons-list">
                                 <li (click)="addMyPokemon(pokemon)">
-                                    ADD
+                                    <img src="/assets/svg/pokeball.svg" alt="" placement="bottom" ngbTooltip="Catch me!">
                                 </li>
                                 <li [routerLink]="['/pokemon', pokemon.id]">
-                                    P
-                                </li>
-                                <li>
-                                    <i class="fa fa-leaf"></i>
+                                    <img src="/assets/svg/eye-icon.svg" alt="" placement="bottom" ngbTooltip="Check me out!">
                                 </li>
                             </ul>
                         </div>

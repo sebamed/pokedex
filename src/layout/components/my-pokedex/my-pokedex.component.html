@@ -17,19 +17,16 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <div class="diamond">
-                                <p>{{ pokemon.id }}</p>
+                            <div class="placeholder">
+                                
                             </div>
                             <div class="card-icons">
                                 <ul class="icons-list">
-                                    <li (click)="addMyPokemon(pokemon)">
-                                        ADD
+                                    <li (click)="removeMyPokemon(pokemon)">
+                                        <img src="/assets/svg/pokeball-active.svg" alt="" placement="bottom" ngbTooltip="Release me!">
                                     </li>
                                     <li [routerLink]="['/pokemon', pokemon.id]">
-                                        P
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-leaf"></i>
+                                        <img src="/assets/svg/eye-icon.svg" alt="" placement="bottom" ngbTooltip="Check me out!">
                                     </li>
                                 </ul>
                             </div>
