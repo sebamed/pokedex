@@ -38,6 +38,7 @@ declare var $: any;
 })
 export class PokemonListComponent implements OnInit, OnDestroy {
 
+    currentViewList: boolean = false;
     currentSort: string = 'id';
 
     pokemonList: IPokemon[];
@@ -100,5 +101,16 @@ export class PokemonListComponent implements OnInit, OnDestroy {
             this.pokemonList.sort((a,b ) => a.types[0].type.name.localeCompare(b.types[0].type.name));
         }
         this.toggleSortModal(false);
+    }
+
+    changeView(){
+        if(!this.currentViewList){
+            $('#btnTable').removeClass('active');
+            $('#btnList').addClass('active');
+        } else {
+            $('#btnTable').addClass('active');
+            $('#btnList').removeClass('active'); 
+        }
+        this.currentViewList = !this.currentViewList;
     }
 }

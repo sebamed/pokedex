@@ -26,10 +26,39 @@
                     <button class="open-sort" (click)="toggleSortModal(true)">
                         <i class="fa fa-cog"></i>
                     </button>
+                    <div class="change-view">
+                        <button id="btnTable" class="active" (click)="changeView()" placement="bottom" ngbTooltip="Toggle view!">
+                            <i class="fa fa-th"></i>
+                        </button>
+                        <button id="btnList" (click)="changeView()" placement="bottom" ngbTooltip="Toggle view!">
+                            <i class="fa fa-list"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="content">
+        <!-- list display -->
+        <div class="content" *ngIf="currentViewList">
+            <div class="row" [@reveal]="'in'" *ngFor="let pokemon of pokemonList | filter : searchText">
+                <div class="col-md-12 list-item">
+                    <div class="diamond">
+                        <p>{{pokemon.id}}</p>
+                    </div>
+                    <div class="list-item-info">
+                        <img src="{{ pokemon.sprites.front_default }}" alt="" />
+                        <span [routerLink]="['/pokemon', pokemon.id]" placement="bottom" ngbTooltip="Check me out!">{{pokemon.name | capitalizeLetters:'01'}}</span>
+                        <ul class="list-types">
+                            <li *ngFor="let type of pokemon.types" class="{{ type.type.name }} type" (click)="openTypesModal(type)">{{ type.type.name }}</li>
+                        </ul>
+                    </div>
+                    <div class="list-file">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- default display -->
+        <div class="content" *ngIf="!currentViewList">
             <div *ngIf="pokemonList">
                 <div class="card" [@reveal]="'in'" *ngFor="let pokemon of pokemonList | filter : searchText">
                     <div class="card-top-bg">
