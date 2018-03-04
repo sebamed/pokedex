@@ -359,6 +359,7 @@ input::placeholder {
     border: 1px solid #e6ac00;
     border-radius: 5px;
     background-color: #FFCB05;
+    cursor: pointer;
 }
 
 /* reset */
