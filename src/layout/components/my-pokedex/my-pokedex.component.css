@@ -3,7 +3,7 @@
 }
 
 .no-pokemon h4 {
-    color: #8a8a8a;
+    color: #213861;
 }
 
 .content {
@@ -16,13 +16,6 @@
 
 .placeholder {
     padding: 0 170px;
-}
-
-.pokedex-counter {
-    background-color: #213861;
-    padding: 10px 30px;
-    margin-right: 60px;
-    position: relative;
 }
 
 .pokedex-title {

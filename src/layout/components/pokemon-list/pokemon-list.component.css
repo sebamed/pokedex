@@ -264,10 +264,10 @@
     border-bottom: 2px solid #335c9b;
 }
 
-.input-field {
+.control-board {
     border-bottom: 1px solid #dadada;
-    width: 100%;
     padding: 20px 0 10px 0;
+    width: 100%;
     background-color: #e4e4e4;
     text-align: center;
 }
@@ -278,7 +278,6 @@ input {
     border-radius: 0;
     outline: none;
     height: 3rem;
-    width: 100%;
     margin: 0 0 20px 0;
     padding: 0;
     -webkit-box-shadow: none;
@@ -293,9 +292,81 @@ input::placeholder {
     color: #9e9e9e;
 }
 
+.sort {
+    width: 100%;
+    padding: 10px 0;
+    text-align: left;
+}
+
+.sort p {
+    display: inline-block;
+    color: #9e9e9e;
+}
+
+.sort button {
+    outline: none;
+    background: #335c9b;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.sort button:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.16);
+}
+
+.sort button i {
+    color: #fff;
+}
+
+.close i {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: .9rem;
+    color: #9e9e9e;
+}
+
+.settings-modal {
+    background-color: #fff;
+    border: 1px solid #dadada;
+    border-radius: 5px;
+    padding: 20px 30px;
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 1000;
+}
+
+.custom-select {
+    outline: none;  
+    cursor: pointer; 
+}
+
+.custom-select-lg {
+    font-size: 100%;
+    background-color: #f1f1f1;
+}
+
+.settings-modal button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    color: #fff;
+    outline: none;
+    border: 1px solid #e6ac00;
+    border-radius: 5px;
+    background-color: #FFCB05;
+}
+
 /* reset */
 
 ul {
     padding: 0;
 }
 
+.row {
+    margin-left: 0;
+}

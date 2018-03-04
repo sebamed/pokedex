@@ -1,7 +1,31 @@
+<div class="settings-modal">
+    <div class="close">
+        <i class="fa fa-close"></i>
+    </div>
+    <p>Sort pokemon by:</p>
+    <select class="custom-select custom-select-lg">
+        <option selected>Id</option>
+        <option value="1">Name</option>
+        <option value="2">Type</option>
+    </select>
+    <button>
+        Sort
+    </button>
+</div>
 <div id="pokemon-list">
     <div class="poke-row">
-        <div class="input-field">
-            <input ngDefaultControl [(ngModel)]="searchText" id="search" type="search" class="validate" placeholder="search pokemon">
+        <div class="row control-board">
+            <div class="col-md-9">
+                <input ngDefaultControl [(ngModel)]="searchText" id="search" type="search" class="validate" placeholder="search pokemon">
+            </div>
+            <div class="col-md-3">
+                <div class="sort">
+                    <p>Sorted by: ID</p>
+                    <button>
+                        <i class="fa fa-cog"></i>
+                    </button>
+                </div>
+            </div>
         </div>
         <div class="content">
             <div *ngIf="pokemonList">
