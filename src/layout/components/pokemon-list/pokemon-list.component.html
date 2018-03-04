@@ -2,13 +2,13 @@
     <div class="close">
         <i class="fa fa-close" (click)="toggleSortModal(false)"></i>
     </div>
-    <p>Sort pokemon by:</p>
+    <p ngDefaultControl [(ngModel)]="currentSort">Sort pokemon by:</p>
     <select class="custom-select custom-select-lg">
-        <option selected>Id</option>
-        <option value="1">Name</option>
-        <option value="2">Type</option>
+        <option selected value="id">Id</option>
+        <option value="name">Name</option>
+        <option value="type">Type</option>
     </select>
-    <button>
+    <button (click)="sortPokemon()">
         Sort
     </button>
 </div>
@@ -20,7 +20,9 @@
             </div>
             <div class="col-md-3">
                 <div class="sort">
-                    <p>Sorted by: ID</p>
+                    <p>Sorted by:
+                        <b>{{ currentSort }}</b>
+                    </p>
                     <button class="open-sort" (click)="toggleSortModal(true)">
                         <i class="fa fa-cog"></i>
                     </button>

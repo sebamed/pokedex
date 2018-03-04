@@ -38,6 +38,8 @@ declare var $: any;
 })
 export class PokemonListComponent implements OnInit, OnDestroy {
 
+    currentSort: string = 'id';
+
     pokemonList: IPokemon[];
 
     pokemonStringify: String = '123';
@@ -86,5 +88,17 @@ export class PokemonListComponent implements OnInit, OnDestroy {
         } else {
             $('.settings-modal').fadeOut('fast');
         }
+    }
+
+    sortPokemon() {
+        this.currentSort = $('.custom-select').val();
+        if (this.currentSort === 'id') {
+            this.pokemonList.sort((a, b) => a.id - b.id);
+        } else if (this.currentSort === 'name') {
+            this.pokemonList.sort((a, b) => a.name.localeCompare(b.name));
+        } else if (this.currentSort === 'type') {
+            this.pokemonList.sort((a,b ) => a.types[0].type.name.localeCompare(b.types[0].type.name));
+        }
+        this.toggleSortModal(false);
     }
 }
