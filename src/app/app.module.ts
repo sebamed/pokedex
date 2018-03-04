@@ -28,6 +28,7 @@ import { PokemonComponent } from '../layout/components/pokemon/pokemon.component
 import { MyPokedexComponent } from '../layout/components/my-pokedex/my-pokedex.component';
 import { MessagesComponent } from '../layout/components/messages/messages.component';
 import { FooterComponent } from '../layout/components/footer/footer.component';
+import { AppComponent } from './app.component';
 
 // Modals 
 import { TypesModalComponent } from '../layout/modals/type/type-modal.component';
@@ -42,7 +43,8 @@ import { TypesModalComponent } from '../layout/modals/type/type-modal.component'
     TypesModalComponent,
     MyPokedexComponent,
     MessagesComponent,
-    FooterComponent
+    FooterComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

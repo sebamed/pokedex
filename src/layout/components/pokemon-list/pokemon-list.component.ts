@@ -45,6 +45,8 @@ export class PokemonListComponent implements OnInit, OnDestroy {
 
     pokemonStringify: String = '123';
 
+    searchText: string;
+
     // subscriptions
     subSetPokemon: Subscription;
 

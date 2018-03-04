@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { OnInit, OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 import { trigger, state, style, animate, transition, query } from '@angular/animations';
+import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/timer';
+import { Router, NavigationEnd } from '@angular/router';
 
 declare var $: any;
 
@@ -46,13 +50,32 @@ declare var $: any;
 })
 export class MenuComponent implements OnInit, OnDestroy {
 
-    private _opened: boolean = false;
+    public _opened: boolean = false;
+
+    public _loaded: boolean = false;
+
+    // subscriptions
+    subTimer: Subscription;
+
+    // observables
+    oTimer: Observable<any>;
+
+    constructor(private _router: Router){
+
+    }
 
     ngOnInit() {
+        this._router.events.subscribe((val) => {
+            if(val instanceof NavigationEnd){
+                this._loaded = false;
+                this.autoShow();
+            }
+        });
+        this.autoShow();
     }
 
     ngOnDestroy() {
-
+        this.subTimer.unsubscribe();
     }
 
     setActive(event) {
@@ -68,8 +91,16 @@ export class MenuComponent implements OnInit, OnDestroy {
         this._opened = !this._opened;
     }
 
-      // change the animation state
-  getRouteAnimation(outlet) {
-    return outlet.activatedRouteData.animation
-  }
+    // change the animation state
+    getRouteAnimation(outlet) {
+        return outlet.activatedRouteData.animation
+    }
+
+    // auto show footer after 1.5 sec
+    autoShow(){
+        this.oTimer = Observable.timer(1000);
+        this.subTimer = this.oTimer.subscribe(() => {
+            this._loaded = true;
+        });
+    }
 }

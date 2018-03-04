@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Righteous);
 @import url(https://fonts.googleapis.com/css?family=Jura);
 html, body {
-    font-family: Jura;
+    font-family: Jura !important;
 }
 
 .left {

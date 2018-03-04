@@ -13,12 +13,9 @@
                     <li (click)="setActive($event)" class="active" [routerLink]="['']">Pokemon list</li>
                     <li (click)="setActive($event)" [routerLink]="['/mypokedex']">My pokedex</li>
                     <div class="sidebar-separator"></div>
-                    <li (click)="setActive($event)">dsa</li>
-                    <li (click)="setActive($event)">dsa</li>
+                    <li (click)="setActive($event)">About</li>
                     <div class="sidebar-separator"></div>
-                    <li (click)="setActive($event)">TEST</li>
-                    <li (click)="setActive($event)">Test</li>
-                    <li (click)="setActive($event)">tEST</li>
+                    <li (click)="setActive($event)">Github</li>
                     <div class="sidebar-separator"></div>
                 </ul>
             </div>
@@ -39,6 +36,6 @@
             <router-outlet #route="outlet"></router-outlet>
         </div>
         <app-messages></app-messages>
-        <app-footer></app-footer>
+        <app-footer *ngIf="_loaded"></app-footer>
     </div>
 </ng-sidebar-container>
