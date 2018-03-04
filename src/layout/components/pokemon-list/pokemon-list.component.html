@@ -23,7 +23,7 @@
                     <p>Sorted by:
                         <b>{{ currentSort }}</b>
                     </p>
-                    <button class="open-sort" (click)="toggleSortModal(true)">
+                    <button class="open-sort" (click)="toggleSortModal(true)" placement="bottom" ngbTooltip="Settings">
                         <i class="fa fa-cog"></i>
                     </button>
                     <div class="change-view">
@@ -50,8 +50,6 @@
                         <ul class="list-types">
                             <li *ngFor="let type of pokemon.types" class="{{ type.type.name }} type" (click)="openTypesModal(type)">{{ type.type.name }}</li>
                         </ul>
-                    </div>
-                    <div class="list-file">
                     </div>
                 </div>
             </div>
