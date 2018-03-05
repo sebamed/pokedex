@@ -30,6 +30,7 @@ import { MessagesComponent } from '../layout/components/messages/messages.compon
 import { FooterComponent } from '../layout/components/footer/footer.component';
 import { AppComponent } from './app.component';
 import { ErrorComponent } from '../layout/components/error/error.component';
+import { AboutComponent } from '../layout/components/about/about.component';
 
 // Modals 
 import { TypesModalComponent } from '../layout/modals/type/type-modal.component';
@@ -46,7 +47,8 @@ import { TypesModalComponent } from '../layout/modals/type/type-modal.component'
     MessagesComponent,
     FooterComponent,
     AppComponent,
-    ErrorComponent
+    ErrorComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
