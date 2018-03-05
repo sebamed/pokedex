@@ -1,0 +1,60 @@
+.separator {
+    padding: 45px 0;
+}
+
+.about {
+    background: #E9ECEF;
+    padding: 170px 0;
+}
+
+.image {
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.project h4 {
+    color: #212529;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.project p {
+    line-height: 30px;
+}
+
+.project p a {
+    color: #ffcb05;
+}
+
+.project p a:hover {
+    color: #e6ac00;
+}
+
+.btn-yellow {
+    background: transparent;
+    border: 1px solid #ffcb05;
+    color: #ffcb05;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: inline-block;
+    margin-right: 10px;
+    transition: all .2s ease-in-out;
+}
+
+.btn-yellow span {
+    margin-left: 10px;
+}
+
+.btn-yellow span {
+    font-size: 1em;
+}
+
+.btn-yellow:hover {
+    background: #ffcb05;
+    color: #fff;
+}
