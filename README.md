@@ -3,7 +3,7 @@
 - [ng-bootstrap](https://github.com/ng-bootstrap/ng-bootstrap) - Angular 4 directives to Bootstrap 4 (using modal)
 
 # Demo
-Demo will be uploaded soon!
+[DEMO](https://sebamed.github.io/pokedex/)
 
 # Description
 Pokedex interactive frontend app built in Angular 5 with Bootstrap 4.0.0
